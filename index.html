@@ -49,7 +49,7 @@
     <p class="grande estrecho">Este es el recorrido de un sistema que tengo en funcionamiento. Entra por correo y acaba donde el cliente lo necesita. Entre el primer recuadro y el último no hay ningún paso manual.</p>
     
 <div class="diagrama rev">
-<svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" role="img"
+<svg class="diag-ancho" viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" role="img"
      aria-label="Diagrama: un correo entra, el sistema lo lee y extrae los datos, y el resultado se reparte en hoja actualizada, contacto creado y confirmación enviada.">
   <defs>
     <marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
@@ -102,6 +102,46 @@
     <animateMotion dur="3.6s" begin="1.7s" repeatCount="indefinite"
       path="M490,130 H520 V210 H556"/>
     <animate attributeName="opacity" values="0;1;1;0" dur="3.6s" begin="1.7s" repeatCount="indefinite"/>
+  </circle>
+</svg>
+<svg class="diag-movil" viewBox="0 0 360 600" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-label="Diagrama vertical: llega un correo, el sistema lo lee y extrae los datos, y el resultado sale en tres sitios.">
+  <defs>
+    <marker id="fv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9aa3b0"/>
+    </marker>
+  </defs>
+
+  <rect x="60" y="6" width="240" height="66" rx="12" fill="#fdf9f3" stroke="#e6d9c6"/>
+  <text x="180" y="34" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#12161c">Llega un correo</text>
+  <text x="180" y="56" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#8b7355">reserva, pedido o aviso</text>
+
+  <line x1="180" y1="76" x2="180" y2="106" stroke="#9aa3b0" stroke-width="2" marker-end="url(#fv)"/>
+
+  <rect x="20" y="112" width="320" height="152" rx="14" fill="#0d5f52"/>
+  <text x="180" y="142" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#fff">El sistema, cada 15 min</text>
+  <text x="46" y="176" font-family="system-ui,sans-serif" font-size="15" fill="#bfe0d8">1 · Lee y clasifica el aviso</text>
+  <text x="46" y="206" font-family="system-ui,sans-serif" font-size="15" fill="#bfe0d8">2 · Extrae los datos</text>
+  <text x="46" y="236" font-family="system-ui,sans-serif" font-size="15" fill="#bfe0d8">3 · Comprueba duplicados</text>
+
+  <line x1="180" y1="268" x2="180" y2="298" stroke="#9aa3b0" stroke-width="2" marker-end="url(#fv)"/>
+
+  <rect x="20" y="304" width="320" height="58" rx="12" fill="#e4f0ed" stroke="#c3ded7"/>
+  <text x="180" y="339" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15.5" font-weight="600" fill="#0d5f52">Tus datos, donde los necesitas</text>
+
+  <rect x="20" y="374" width="320" height="58" rx="12" fill="#e4f0ed" stroke="#c3ded7"/>
+  <text x="180" y="409" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15.5" font-weight="600" fill="#0d5f52">El contacto, dado de alta</text>
+
+  <rect x="20" y="444" width="320" height="58" rx="12" fill="#e4f0ed" stroke="#c3ded7"/>
+  <text x="180" y="479" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15.5" font-weight="600" fill="#0d5f52">La confirmación, enviada</text>
+
+  <circle class="pulso" r="6" fill="#b8712a">
+    <animateMotion dur="3.6s" repeatCount="indefinite" path="M180,76 V102"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="3.6s" repeatCount="indefinite"/>
+  </circle>
+  <circle class="pulso" r="6" fill="#8fd0c2">
+    <animateMotion dur="3.6s" begin="1.3s" repeatCount="indefinite" path="M180,268 V294"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="3.6s" begin="1.3s" repeatCount="indefinite"/>
   </circle>
 </svg>
 <p class="pie-fig">El esquema del sistema que mantengo en producción para una empresa de free tours.</p>

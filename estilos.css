@@ -151,3 +151,11 @@ blockquote{padding-left:52px}
 .borrador{position:fixed;bottom:0;left:0;right:0;z-index:99;background:#b8712a;color:#fff;
   text-align:center;font-size:.82rem;padding:7px 12px;letter-spacing:.02em}
 body:has(.borrador){padding-bottom:34px}
+
+/* ── el diagrama, legible tambien en el movil ───────────────── */
+.diagrama .diag-movil{display:none}
+@media(max-width:700px){
+  .diagrama .diag-ancho{display:none}
+  .diagrama .diag-movil{display:block}
+  .diagrama{padding:18px}
+}
