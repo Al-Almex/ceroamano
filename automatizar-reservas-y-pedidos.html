@@ -17,7 +17,7 @@
      Si se queda puesta el día del lanzamiento, la web NO APARECERÁ EN GOOGLE NUNCA.
      ========================================================================== -->
 <meta name="robots" content="noindex, nofollow">
-<link rel="stylesheet" href="estilos.css">
+<link rel="stylesheet" href="estilos.css?v=3">
 </head>
 <body>
 <nav>
@@ -116,44 +116,54 @@
     <animate attributeName="opacity" values="0;1;1;0" dur="3.6s" begin="1.7s" repeatCount="indefinite"/>
   </circle>
 </svg>
-<svg class="diag-movil" viewBox="0 0 360 600" xmlns="http://www.w3.org/2000/svg" role="img"
-     aria-label="Diagrama vertical: llega un correo, el sistema lo lee y extrae los datos, y el resultado sale en tres sitios.">
+<svg class="diag-movil" viewBox="0 0 360 540" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-label="Diagrama vertical: llega un correo, el sistema lo procesa, y de ahi salen tres caminos: tus datos donde los necesitas, el contacto dado de alta y la confirmacion enviada.">
   <defs>
     <marker id="fv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="#9aa3b0"/>
     </marker>
   </defs>
 
-  <rect x="60" y="6" width="240" height="66" rx="12" fill="#fdf9f3" stroke="#e6d9c6"/>
-  <text x="180" y="34" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#12161c">Llega un correo</text>
-  <text x="180" y="56" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" fill="#8b7355">reserva, pedido o aviso</text>
+  <rect x="60" y="4" width="240" height="62" rx="12" fill="#fdf9f3" stroke="#e6d9c6"/>
+  <text x="180" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#12161c">Llega un correo</text>
+  <text x="180" y="51" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13.5" fill="#8b7355">reserva, pedido o aviso</text>
 
-  <line x1="180" y1="76" x2="180" y2="106" stroke="#9aa3b0" stroke-width="2" marker-end="url(#fv)"/>
+  <line x1="180" y1="70" x2="180" y2="96" stroke="#9aa3b0" stroke-width="2" marker-end="url(#fv)"/>
 
-  <rect x="20" y="112" width="320" height="152" rx="14" fill="#0d5f52"/>
-  <text x="180" y="142" text-anchor="middle" font-family="system-ui,sans-serif" font-size="17" font-weight="700" fill="#fff">El sistema, cada 15 min</text>
-  <text x="46" y="176" font-family="system-ui,sans-serif" font-size="15" fill="#bfe0d8">1 · Lee y clasifica el aviso</text>
-  <text x="46" y="206" font-family="system-ui,sans-serif" font-size="15" fill="#bfe0d8">2 · Extrae los datos</text>
-  <text x="46" y="236" font-family="system-ui,sans-serif" font-size="15" fill="#bfe0d8">3 · Comprueba duplicados</text>
+  <rect x="20" y="102" width="320" height="140" rx="14" fill="#0d5f52"/>
+  <text x="180" y="130" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#fff">El sistema, cada 15 min</text>
+  <text x="44" y="162" font-family="system-ui,sans-serif" font-size="14" fill="#bfe0d8">1 · Lee y clasifica el aviso</text>
+  <text x="44" y="190" font-family="system-ui,sans-serif" font-size="14" fill="#bfe0d8">2 · Extrae los datos</text>
+  <text x="44" y="218" font-family="system-ui,sans-serif" font-size="14" fill="#bfe0d8">3 · Comprueba duplicados</text>
 
-  <line x1="180" y1="268" x2="180" y2="298" stroke="#9aa3b0" stroke-width="2" marker-end="url(#fv)"/>
+  <path d="M180,242 V266 H42 V306 H72" fill="none" stroke="#9aa3b0" stroke-width="2" marker-end="url(#fv)"/>
+  <path d="M42,306 V390 H72" fill="none" stroke="#9aa3b0" stroke-width="2" marker-end="url(#fv)"/>
+  <path d="M42,390 V474 H72" fill="none" stroke="#9aa3b0" stroke-width="2" marker-end="url(#fv)"/>
 
-  <rect x="20" y="304" width="320" height="58" rx="12" fill="#e4f0ed" stroke="#c3ded7"/>
-  <text x="180" y="339" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15.5" font-weight="600" fill="#0d5f52">Tus datos, donde los necesitas</text>
+  <rect x="78" y="278" width="262" height="56" rx="12" fill="#e4f0ed" stroke="#c3ded7"/>
+  <text x="209" y="312" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14.5" font-weight="600" fill="#0d5f52">Tus datos, donde los necesitas</text>
 
-  <rect x="20" y="374" width="320" height="58" rx="12" fill="#e4f0ed" stroke="#c3ded7"/>
-  <text x="180" y="409" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15.5" font-weight="600" fill="#0d5f52">El contacto, dado de alta</text>
+  <rect x="78" y="362" width="262" height="56" rx="12" fill="#e4f0ed" stroke="#c3ded7"/>
+  <text x="209" y="396" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14.5" font-weight="600" fill="#0d5f52">El contacto, dado de alta</text>
 
-  <rect x="20" y="444" width="320" height="58" rx="12" fill="#e4f0ed" stroke="#c3ded7"/>
-  <text x="180" y="479" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15.5" font-weight="600" fill="#0d5f52">La confirmación, enviada</text>
+  <rect x="78" y="446" width="262" height="56" rx="12" fill="#e4f0ed" stroke="#c3ded7"/>
+  <text x="209" y="480" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14.5" font-weight="600" fill="#0d5f52">La confirmación, enviada</text>
 
   <circle class="pulso" r="6" fill="#b8712a">
-    <animateMotion dur="3.6s" repeatCount="indefinite" path="M180,76 V102"/>
-    <animate attributeName="opacity" values="0;1;1;0" dur="3.6s" repeatCount="indefinite"/>
+    <animateMotion dur="4s" repeatCount="indefinite" path="M180,70 V92"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="4s" repeatCount="indefinite"/>
   </circle>
   <circle class="pulso" r="6" fill="#8fd0c2">
-    <animateMotion dur="3.6s" begin="1.3s" repeatCount="indefinite" path="M180,268 V294"/>
-    <animate attributeName="opacity" values="0;1;1;0" dur="3.6s" begin="1.3s" repeatCount="indefinite"/>
+    <animateMotion dur="4s" begin="1.1s" repeatCount="indefinite" path="M180,242 V266 H42 V306 H68"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="4s" begin="1.1s" repeatCount="indefinite"/>
+  </circle>
+  <circle class="pulso" r="6" fill="#8fd0c2">
+    <animateMotion dur="4s" begin="1.5s" repeatCount="indefinite" path="M180,242 V266 H42 V390 H68"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="4s" begin="1.5s" repeatCount="indefinite"/>
+  </circle>
+  <circle class="pulso" r="6" fill="#8fd0c2">
+    <animateMotion dur="4s" begin="1.9s" repeatCount="indefinite" path="M180,242 V266 H42 V474 H68"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="4s" begin="1.9s" repeatCount="indefinite"/>
   </circle>
 </svg>
 <p class="pie-fig">El esquema del sistema que mantengo en producción para una empresa de free tours.</p>
