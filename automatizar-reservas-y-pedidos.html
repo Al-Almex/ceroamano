@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Automatizar reservas y pedidos: del correo a Google Sheets | Cero a Mano</title>
+<meta name="description" content="Automatizo la entrada de reservas y pedidos: los datos acaban donde tú los lleves sin copiar nada, con alta de contacto y confirmación automática.">
+<link rel="canonical" href="https://ceroamano.com/automatizar-reservas-y-pedidos.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Automatizar reservas y pedidos: del correo a Google Sheets | Cero a Mano">
+<meta property="og:description" content="Automatizo la entrada de reservas y pedidos: los datos acaban donde tú los lleves sin copiar nada, con alta de contacto y confirmación automática.">
+<meta property="og:url" content="https://ceroamano.com/automatizar-reservas-y-pedidos.html">
+<meta property="og:locale" content="es_ES">
+<!-- =========================================================================
+     🔴 QUITAR ESTA ETIQUETA ANTES DE PUBLICAR DE VERDAD
+     Mientras la web está en revisión, esto le dice a Google que NO la indexe.
+     Si se queda puesta el día del lanzamiento, la web NO APARECERÁ EN GOOGLE NUNCA.
+     ========================================================================== -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<nav>
+  <div class="env">
+    <a class="marca" href="index.html">Cero a Mano<span>.</span> <em>Alejandro de la Rosa</em></a>
+    <span class="enlaces">
+      <a href="automatizar-reservas-y-pedidos.html">Automatización</a>
+      <a href="whatsapp-business.html">WhatsApp Business</a>
+      <a href="seo-para-negocios.html">SEO</a>
+      <a href="caso-free-tours-malta.html">Caso real</a>
+      <a href="#contacto" class="btn chico">Contactar</a>
+    </span>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="env">
+    <p class="migas"><a href="index.html">Inicio</a> &nbsp;/&nbsp; Automatizar reservas y pedidos</p>
+    <h1>Automatizar la entrada de reservas y pedidos</h1>
+    <p class="grande">Si cada reserva o cada pedido implica abrir un correo, pasar los datos a otro sitio y escribir una confirmación, ese trabajo puede ejecutarse solo. No hace falta que compres ningún programa: lo monto sobre las herramientas que ya usas, sean las que sean.</p>
+    <a href="#contacto" class="btn">Explícame tu proceso</a>
+  </div>
+</header>
+
+<section>
+  <div class="env">
+    <h2>El problema, dicho en claro</h2>
+    <p class="grande estrecho">El trabajo manual repetido no es solo lento: es donde aparecen los errores. Un teléfono mal copiado, una reserva que se registra dos veces, una confirmación que nunca se envió. Y siempre se descubre tarde, cuando el cliente ya se ha quejado.</p>
+    <ul class="lista puntos estrecho">
+      <li>Los datos llegan por correo o por formulario y hay que trasladarlos a mano</li>
+      <li>Falta información y hay que buscarla en otra plataforma</li>
+      <li>Nadie sabe con certeza si esa reserva ya se procesó o no</li>
+      <li>La confirmación depende de que alguien se acuerde de escribirla</li>
+    </ul>
+  </div>
+</section>
+
+<section class="crema">
+  <div class="env">
+    <h2>Cómo queda montado</h2>
+    <p class="grande estrecho">El sistema revisa la entrada cada pocos minutos y ejecuta el circuito completo sin intervención. El destino final lo pones tú.</p>
+    
+<div class="diagrama rev">
+<svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-label="Diagrama: un correo entra, el sistema lo lee y extrae los datos, y el resultado se reparte en hoja actualizada, contacto creado y confirmación enviada.">
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9aa3b0"/>
+    </marker>
+  </defs>
+
+  <!-- entrada -->
+  <rect x="8" y="96" width="180" height="68" rx="12" fill="#fdf9f3" stroke="#e6d9c6"/>
+  <text x="98" y="124" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#12161c">Llega un correo</text>
+  <text x="98" y="145" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12.5" fill="#8b7355">reserva, pedido o aviso</text>
+
+  <line x1="192" y1="130" x2="252" y2="130" stroke="#9aa3b0" stroke-width="2" marker-end="url(#f)"/>
+
+  <!-- motor -->
+  <rect x="256" y="56" width="230" height="148" rx="14" fill="#0d5f52"/>
+  <text x="371" y="88" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#fff">El sistema, cada 15 min</text>
+  <text x="286" y="118" font-family="system-ui,sans-serif" font-size="13" fill="#bfe0d8">1 · Lee y clasifica el aviso</text>
+  <text x="286" y="143" font-family="system-ui,sans-serif" font-size="13" fill="#bfe0d8">2 · Extrae los datos</text>
+  <text x="286" y="168" font-family="system-ui,sans-serif" font-size="13" fill="#bfe0d8">3 · Comprueba duplicados</text>
+
+  <path d="M490,130 H520 V50 H560" fill="none" stroke="#9aa3b0" stroke-width="2" marker-end="url(#f)"/>
+  <path d="M490,130 H560" fill="none" stroke="#9aa3b0" stroke-width="2" marker-end="url(#f)"/>
+  <path d="M490,130 H520 V210 H560" fill="none" stroke="#9aa3b0" stroke-width="2" marker-end="url(#f)"/>
+
+  <!-- salidas -->
+  <rect x="564" y="24" width="326" height="52" rx="11" fill="#e4f0ed" stroke="#c3ded7"/>
+  <text x="584" y="55" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#0d5f52">Tus datos, donde los necesitas</text>
+
+  <rect x="564" y="104" width="326" height="52" rx="11" fill="#e4f0ed" stroke="#c3ded7"/>
+  <text x="584" y="135" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#0d5f52">El contacto, dado de alta</text>
+
+  <rect x="564" y="184" width="326" height="52" rx="11" fill="#e4f0ed" stroke="#c3ded7"/>
+  <text x="584" y="215" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#0d5f52">La confirmación, enviada</text>
+  <circle class="pulso" r="5" fill="#b8712a">
+    <animateMotion dur="3.6s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"
+      path="M192,130 H252"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="3.6s" repeatCount="indefinite"/>
+  </circle>
+  <circle class="pulso" r="5" fill="#8fd0c2">
+    <animateMotion dur="3.6s" begin="1.2s" repeatCount="indefinite"
+      path="M490,130 H520 V50 H556"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="3.6s" begin="1.2s" repeatCount="indefinite"/>
+  </circle>
+  <circle class="pulso" r="5" fill="#8fd0c2">
+    <animateMotion dur="3.6s" begin="1.45s" repeatCount="indefinite" path="M490,130 H556"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="3.6s" begin="1.45s" repeatCount="indefinite"/>
+  </circle>
+  <circle class="pulso" r="5" fill="#8fd0c2">
+    <animateMotion dur="3.6s" begin="1.7s" repeatCount="indefinite"
+      path="M490,130 H520 V210 H556"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="3.6s" begin="1.7s" repeatCount="indefinite"/>
+  </circle>
+</svg>
+<p class="pie-fig">El esquema del sistema que mantengo en producción para una empresa de free tours.</p>
+</div>
+
+    <div class="rejilla tres">
+      <div class="tarjeta rev"><span class="num">1</span><h3>Lee y clasifica</h3><p>Distingue entre los tipos de aviso que recibes (una reserva nueva, una modificación, una cancelación, un mensaje del cliente) y aplica a cada uno el tratamiento que le toca.</p></div>
+      <div class="tarjeta rev"><span class="num">2</span><h3>Extrae y comprueba</h3><p>Saca los datos del correo, los normaliza y verifica que esa reserva no estuviera ya registrada. Si algo no encaja con lo esperado, no lo da por válido.</p></div>
+      <div class="tarjeta rev"><span class="num">3</span><h3>Actúa</h3><p>Registra los datos donde tú los lleves, crea el contacto con su teléfono y envía la confirmación, con control para que nunca salga dos veces.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="env">
+    <h2>Qué recibes</h2>
+    <div class="rejilla dos">
+      <div class="tarjeta rev">
+        <h3>El sistema funcionando</h3>
+        <ul class="lista">
+          <li>Montado sobre las herramientas que ya usas, sin obligarte a cambiar</li>
+          <li>Probado con tus datos reales antes de darlo por bueno</li>
+          <li>Con control de duplicados y de envíos repetidos</li>
+        </ul>
+      </div>
+      <div class="tarjeta rev">
+        <h3>Y además</h3>
+        <ul class="lista">
+          <li>Un panel donde ves de un vistazo el estado del día</li>
+          <li>Explicación de qué hace cada parte, para que no dependas de mí</li>
+          <li>Un periodo de ajuste tras la entrega, porque siempre aparece un caso raro</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="crema">
+  <div class="env">
+    <span class="etiqueta">Cómo trabajo</span>
+    <h2>No te cambio la forma de trabajar</h2>
+    <p class="grande estrecho">Esto es lo que más me diferencia y lo digo desde el principio: no llego con un método cerrado al que te tengas que adaptar. Primero me cuentas cómo trabajas hoy, paso a paso y con tus palabras, y a partir de ahí automatizo ese proceso tuyo intentando tocarlo lo menos posible.</p>
+    <div class="rejilla tres">
+      <div class="tarjeta rev">
+        <h3>Tus herramientas</h3>
+        <p>Si llevas los pedidos en una hoja de cálculo, seguimos con esa hoja. Cambiar de programa cuesta dinero y obliga a todo el mundo a reaprender, y casi nunca hace falta.</p>
+      </div>
+      <div class="tarjeta rev">
+        <h3>Tu orden</h3>
+        <p>Si primero apuntas y luego confirmas, el sistema hace lo mismo en ese orden. No vengo a corregirte cómo llevas tu negocio, que lo conoces tú mucho mejor que yo.</p>
+      </div>
+      <div class="tarjeta rev">
+        <h3>Y si algo hay que cambiar</h3>
+        <p>A veces aparece un paso que impide automatizar el resto. Cuando pasa, te lo explico, te digo qué ganas y qué pierdes, y decides tú. No lo cambio por mi cuenta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="arena">
+  <div class="env">
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq">
+      <details><summary>Yo no uso hojas de cálculo, uso otro programa. ¿Vale igual?</summary><p>Vale igual. La hoja de cálculo es lo que usa el cliente del caso que aparece en esta web, no mi forma de trabajar. Lo que hago es llevar los datos hasta donde tú los necesites: tu programa de gestión, tu agenda, tu base de clientes o lo que uses. Si es una herramienta que no conozco, la estudio antes de darte un plazo, no después.</p></details>
+      <details><summary>¿Tengo que cambiar de herramientas?</summary><p>No. Trabajo sobre lo que ya usas: tu correo, tu hoja de cálculo, tu agenda. Cambiar de sistema es caro y obliga a reaprender; lo normal es que no haga falta.</p></details>
+      <details><summary>¿Y si un día llega un correo distinto de lo habitual?</summary><p>El sistema está preparado para no dar por buena una entrada que no reconoce. Prefiero que avise a que registre un dato equivocado, porque un error silencioso se descubre semanas después y para entonces ya ha hecho daño.</p></details>
+      <details><summary>¿Qué pasa si mi proveedor cambia el formato de sus correos?</summary><p>Hay que ajustar el sistema. Por eso ofrezco mantenimiento: no es una cuota por existir, es que estas cosas cambian sin avisar y alguien tiene que estar pendiente.</p></details>
+      <details><summary>¿Cuánto se tarda?</summary><p>Depende de cuántos casos distintos haya que contemplar. Un circuito sencillo puede estar en unos días; uno con varios tipos de aviso y comprobaciones lleva más. Te doy un plazo cerrado antes de empezar.</p></details>
+    </div>
+  </div>
+</section>
+<section class="cta" id="contacto">
+  <div class="env">
+    <h2>Explícame el proceso que quieres dejar de hacer a mano</h2>
+    <p class="grande estrecho">No necesitas saber si se puede automatizar ni cómo se hace. Descríbeme la tarea con tus palabras y te digo si tiene solución, cuánto llevaría y qué coste tendría. Si considero que no compensa, también te lo diré.</p>
+    <div class="vias">
+      <a class="btn" href="mailto:alex.automatizacions@gmail.com">Escribir un correo</a>
+    </div>
+  </div>
+</section>
+
+<footer class="pie">
+  <div class="env">
+    <span>
+      <a href="index.html">Inicio</a>
+      <a href="automatizar-reservas-y-pedidos.html">Automatización</a>
+      <a href="whatsapp-business.html">WhatsApp Business</a>
+      <a href="seo-para-negocios.html">SEO</a>
+      <a href="caso-free-tours-malta.html">Caso real</a>
+    </span>
+    <span><strong>Cero a Mano</strong> · Alejandro de la Rosa · Automatización de procesos · España</span>
+  </div>
+</footer>
+<script>
+// Aparicion suave de los bloques al entrar en pantalla.
+(function () {
+  var bloques = document.querySelectorAll('.rev');
+  if (!('IntersectionObserver' in window)) {
+    for (var i = 0; i < bloques.length; i++) bloques[i].classList.add('dentro');
+    return;
+  }
+  var obs = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('dentro'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  bloques.forEach(function (b, i) {
+    if (i % 3 === 1) b.classList.add('d1');
+    if (i % 3 === 2) b.classList.add('d2');
+    obs.observe(b);
+  });
+})();
+</script>
+<div class="borrador">Versión en revisión &middot; los textos y el diseño pueden cambiar</div>
+</body>
+</html>

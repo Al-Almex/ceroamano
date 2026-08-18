@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caso real: sistema de reservas automatizado para Free Tours Malta | Cero a Mano</title>
+<meta name="description" content="Caso real: un sistema de reservas que pasó de copiarse a mano a funcionar solo. Lectura del correo, alta de contacto, confirmación y panel del día.">
+<link rel="canonical" href="https://ceroamano.com/caso-free-tours-malta.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Caso real: sistema de reservas automatizado para Free Tours Malta | Cero a Mano">
+<meta property="og:description" content="Caso real: un sistema de reservas que pasó de copiarse a mano a funcionar solo. Lectura del correo, alta de contacto, confirmación y panel del día.">
+<meta property="og:url" content="https://ceroamano.com/caso-free-tours-malta.html">
+<meta property="og:locale" content="es_ES">
+<!-- =========================================================================
+     🔴 QUITAR ESTA ETIQUETA ANTES DE PUBLICAR DE VERDAD
+     Mientras la web está en revisión, esto le dice a Google que NO la indexe.
+     Si se queda puesta el día del lanzamiento, la web NO APARECERÁ EN GOOGLE NUNCA.
+     ========================================================================== -->
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<nav>
+  <div class="env">
+    <a class="marca" href="index.html">Cero a Mano<span>.</span> <em>Alejandro de la Rosa</em></a>
+    <span class="enlaces">
+      <a href="automatizar-reservas-y-pedidos.html">Automatización</a>
+      <a href="whatsapp-business.html">WhatsApp Business</a>
+      <a href="seo-para-negocios.html">SEO</a>
+      <a href="caso-free-tours-malta.html">Caso real</a>
+      <a href="#contacto" class="btn chico">Contactar</a>
+    </span>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="env">
+    <p class="migas"><a href="index.html">Inicio</a> &nbsp;/&nbsp; Caso: Free Tours Malta</p>
+    <span class="etiqueta ambar">Caso real · en producción</span>
+    <h1>Free Tours Malta: las reservas dejaron de copiarse a mano</h1>
+    <p class="grande">Jorge Vicioso organiza free tours en La Valeta. Las reservas le llegan por correo desde la agencia, y cada una implicaba abrir el mensaje, copiar los datos a una hoja, buscar el teléfono en otra plataforma, crear el contacto y redactar la confirmación. Todos los días, una por una.</p>
+  </div>
+</header>
+
+<section>
+  <div class="env">
+    <h2>Antes y ahora</h2>
+    <div class="antes-despues">
+      <div class="bloque rev">
+        <h3>Antes</h3>
+        <ul class="lista puntos">
+          <li>Cada reserva se copiaba a mano del correo a la hoja</li>
+          <li>Había que entrar en la web de la agencia a buscar el teléfono</li>
+          <li>El contacto se creaba uno a uno en el móvil</li>
+          <li>La confirmación se redactaba cada vez</li>
+          <li>Ningún sitio donde consultar el día de un vistazo</li>
+        </ul>
+      </div>
+      <div class="bloque rev">
+        <h3>Ahora</h3>
+        <ul class="lista">
+          <li>El sistema revisa el correo solo, cada quince minutos</li>
+          <li>Distingue los cinco tipos de aviso que llegan y trata cada uno</li>
+          <li>Da de alta al cliente con su teléfono, sin intervención</li>
+          <li>Envía la confirmación con control para no repetirla</li>
+          <li>Un panel con el tour del día, asistencia y aforo restante</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dato rev">
+      <span class="cifra">Un mínimo de dos horas al día</span>
+      <p>Es lo que su responsable calcula que le ahorra el sistema desde que está montado.</p>
+      <p class="fuente">Estimación del propio cliente, no una medición realizada por mí. El sistema está en producción y funcionando a diario desde julio de 2026.</p>
+    </div>
+
+    <!-- Permiso del cliente concedido por WhatsApp el 18/08/2026. -->
+    <blockquote class="rev">
+      «Inmejorable experiencia con Alex. Muy profesional y con un compromiso con el que nos ha ayudado a reducir en gran medida nuestro flujo de trabajo. Un gran talento al que volveremos a recurrir y que recomendamos sin duda alguna.»
+      <footer>Jorge Vicioso, de <a href="https://quehacerenmalta.com" target="_blank" rel="noopener">Qué hacer en Malta</a></footer>
+    </blockquote>
+  </div>
+</section>
+
+<section class="crema">
+  <div class="env">
+    <h2>Cómo está montado</h2>
+    
+<div class="diagrama rev">
+<svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" role="img"
+     aria-label="Diagrama: un correo entra, el sistema lo lee y extrae los datos, y el resultado se reparte en hoja actualizada, contacto creado y confirmación enviada.">
+  <defs>
+    <marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9aa3b0"/>
+    </marker>
+  </defs>
+
+  <!-- entrada -->
+  <rect x="8" y="96" width="180" height="68" rx="12" fill="#fdf9f3" stroke="#e6d9c6"/>
+  <text x="98" y="124" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#12161c">Llega un correo</text>
+  <text x="98" y="145" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12.5" fill="#8b7355">reserva, pedido o aviso</text>
+
+  <line x1="192" y1="130" x2="252" y2="130" stroke="#9aa3b0" stroke-width="2" marker-end="url(#f)"/>
+
+  <!-- motor -->
+  <rect x="256" y="56" width="230" height="148" rx="14" fill="#0d5f52"/>
+  <text x="371" y="88" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#fff">El sistema, cada 15 min</text>
+  <text x="286" y="118" font-family="system-ui,sans-serif" font-size="13" fill="#bfe0d8">1 · Lee y clasifica el aviso</text>
+  <text x="286" y="143" font-family="system-ui,sans-serif" font-size="13" fill="#bfe0d8">2 · Extrae los datos</text>
+  <text x="286" y="168" font-family="system-ui,sans-serif" font-size="13" fill="#bfe0d8">3 · Comprueba duplicados</text>
+
+  <path d="M490,130 H520 V50 H560" fill="none" stroke="#9aa3b0" stroke-width="2" marker-end="url(#f)"/>
+  <path d="M490,130 H560" fill="none" stroke="#9aa3b0" stroke-width="2" marker-end="url(#f)"/>
+  <path d="M490,130 H520 V210 H560" fill="none" stroke="#9aa3b0" stroke-width="2" marker-end="url(#f)"/>
+
+  <!-- salidas -->
+  <rect x="564" y="24" width="326" height="52" rx="11" fill="#e4f0ed" stroke="#c3ded7"/>
+  <text x="584" y="55" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#0d5f52">Tus datos, donde los necesitas</text>
+
+  <rect x="564" y="104" width="326" height="52" rx="11" fill="#e4f0ed" stroke="#c3ded7"/>
+  <text x="584" y="135" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#0d5f52">El contacto, dado de alta</text>
+
+  <rect x="564" y="184" width="326" height="52" rx="11" fill="#e4f0ed" stroke="#c3ded7"/>
+  <text x="584" y="215" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#0d5f52">La confirmación, enviada</text>
+  <circle class="pulso" r="5" fill="#b8712a">
+    <animateMotion dur="3.6s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"
+      path="M192,130 H252"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="3.6s" repeatCount="indefinite"/>
+  </circle>
+  <circle class="pulso" r="5" fill="#8fd0c2">
+    <animateMotion dur="3.6s" begin="1.2s" repeatCount="indefinite"
+      path="M490,130 H520 V50 H556"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="3.6s" begin="1.2s" repeatCount="indefinite"/>
+  </circle>
+  <circle class="pulso" r="5" fill="#8fd0c2">
+    <animateMotion dur="3.6s" begin="1.45s" repeatCount="indefinite" path="M490,130 H556"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="3.6s" begin="1.45s" repeatCount="indefinite"/>
+  </circle>
+  <circle class="pulso" r="5" fill="#8fd0c2">
+    <animateMotion dur="3.6s" begin="1.7s" repeatCount="indefinite"
+      path="M490,130 H520 V210 H556"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="3.6s" begin="1.7s" repeatCount="indefinite"/>
+  </circle>
+</svg>
+<p class="pie-fig">El esquema del sistema que mantengo en producción para una empresa de free tours.</p>
+</div>
+
+    <div class="rejilla tres">
+      <div class="tarjeta rev"><span class="num">1</span><h3>Clasificar antes que actuar</h3><p>No todos los correos de la agencia son una reserva nueva. Los hay de modificación, de cancelación y de mensaje del cliente. El primer paso es distinguirlos, porque cada uno exige una acción distinta y confundirlos es peor que no hacer nada.</p></div>
+      <div class="tarjeta rev"><span class="num">2</span><h3>No repetir nunca un envío</h3><p>El riesgo real de automatizar mensajes es enviarlos dos veces al mismo cliente. El sistema marca cada reserva ya procesada y comprueba ese marcador antes de actuar.</p></div>
+      <div class="tarjeta rev"><span class="num">3</span><h3>Algo que se pueda mirar</h3><p>Un panel con el tour del día, quién ha llegado y cuánto aforo queda. La automatización no sirve de nada si luego no hay forma de comprobar de un vistazo que todo está en orden.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="env">
+    <h2>Qué vino después</h2>
+    <p class="grande estrecho">El sistema no se entregó y se olvidó. Sigue en mantenimiento, ha incorporado funciones nuevas, como la validación previa de las reservas. Ahora mismo estoy trabajando además en el posicionamiento de su web, coordinado con su desarrollador.</p>
+    <p class="grande estrecho" style="margin-top:16px">Esa es la parte que no se ve en un presupuesto: un sistema en producción necesita a alguien pendiente cuando algo cambia.</p>
+    <p style="margin-top:26px">
+      <a class="btn hueco" href="automatizar-reservas-y-pedidos.html">Ver el servicio de automatización</a>
+    </p>
+  </div>
+</section>
+<section class="cta" id="contacto">
+  <div class="env">
+    <h2>Explícame el proceso que quieres dejar de hacer a mano</h2>
+    <p class="grande estrecho">No necesitas saber si se puede automatizar ni cómo se hace. Descríbeme la tarea con tus palabras y te digo si tiene solución, cuánto llevaría y qué coste tendría. Si considero que no compensa, también te lo diré.</p>
+    <div class="vias">
+      <a class="btn" href="mailto:alex.automatizacions@gmail.com">Escribir un correo</a>
+    </div>
+  </div>
+</section>
+
+<footer class="pie">
+  <div class="env">
+    <span>
+      <a href="index.html">Inicio</a>
+      <a href="automatizar-reservas-y-pedidos.html">Automatización</a>
+      <a href="whatsapp-business.html">WhatsApp Business</a>
+      <a href="seo-para-negocios.html">SEO</a>
+      <a href="caso-free-tours-malta.html">Caso real</a>
+    </span>
+    <span><strong>Cero a Mano</strong> · Alejandro de la Rosa · Automatización de procesos · España</span>
+  </div>
+</footer>
+<script>
+// Aparicion suave de los bloques al entrar en pantalla.
+(function () {
+  var bloques = document.querySelectorAll('.rev');
+  if (!('IntersectionObserver' in window)) {
+    for (var i = 0; i < bloques.length; i++) bloques[i].classList.add('dentro');
+    return;
+  }
+  var obs = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('dentro'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  bloques.forEach(function (b, i) {
+    if (i % 3 === 1) b.classList.add('d1');
+    if (i % 3 === 2) b.classList.add('d2');
+    obs.observe(b);
+  });
+})();
+</script>
+<div class="borrador">Versión en revisión &middot; los textos y el diseño pueden cambiar</div>
+</body>
+</html>

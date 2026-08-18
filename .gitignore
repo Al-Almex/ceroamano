@@ -1,0 +1,24 @@
+# ── Red de seguridad ────────────────────────────────────────────────
+# Este repositorio es PÚBLICO. Todo lo que esté aquí lo puede leer
+# cualquiera. Estas reglas evitan que se cuele nada interno por error.
+
+# Notas y documentación interna
+*.md
+!README.md
+
+# Herramientas de construcción y fragmentos
+_*.py
+_*.html
+
+# Secretos, por si acaso
+.env
+*.env
+*.key
+*.pem
+credenciales*
+*secreto*
+
+# Basura del sistema
+Thumbs.db
+desktop.ini
+.DS_Store
