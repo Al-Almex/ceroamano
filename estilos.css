@@ -182,3 +182,10 @@ body:has(.borrador){padding-bottom:34px}
   .enlaces a:not(.btn)::after{display:none}
   .enlaces a.btn{margin:16px 24px 22px;text-align:center;padding:15px 24px}
 }
+
+/* ── "estás aquí": el enlace de la página actual ───────────── */
+.enlaces a[aria-current]{color:var(--tinta);font-weight:600;cursor:default}
+.enlaces a[aria-current]:not(.btn)::after{width:100%;background:var(--gris-claro)}
+@media(max-width:860px){
+  .enlaces a[aria-current]{background:var(--crema);box-shadow:inset 3px 0 0 var(--verde)}
+}
