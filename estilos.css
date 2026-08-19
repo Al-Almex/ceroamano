@@ -189,3 +189,12 @@ body:has(.borrador){padding-bottom:34px}
 @media(max-width:860px){
   .enlaces a[aria-current]{background:var(--crema);box-shadow:inset 3px 0 0 var(--verde)}
 }
+
+/* ── botones de acción: que respiren al apilarse ───────────── */
+.acciones{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+@media(max-width:560px){
+  .acciones{flex-direction:column;align-items:stretch;gap:12px}
+  .acciones .btn{text-align:center;width:100%}
+  .vias{flex-direction:column;align-items:stretch;gap:12px}
+  .vias .btn,.vias a.alt{text-align:center;width:100%}
+}
