@@ -3,282 +3,845 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cero a Mano · Automatización de procesos para negocios pequeños</title>
+<title>Cero a Mano · Automatización de procesos</title>
 <meta name="description" content="Automatizo el trabajo repetitivo de tu negocio: los pedidos y reservas acaban donde tú los lleves sin copiarlos a mano, con los clientes ordenados y las confirmaciones enviadas solas.">
 <link rel="canonical" href="https://ceroamano.com/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Cero a Mano · Automatización de procesos para negocios pequeños">
+<meta property="og:title" content="Cero a Mano · Automatización de procesos">
 <meta property="og:description" content="Automatizo el trabajo repetitivo de tu negocio: los pedidos y reservas acaban donde tú los lleves sin copiarlos a mano, con los clientes ordenados y las confirmaciones enviadas solas.">
 <meta property="og:url" content="https://ceroamano.com/">
 <meta property="og:locale" content="es_ES">
+<meta name="theme-color" content="#0b1016">
+<script>document.documentElement.classList.add('js')</script>
 <!-- =========================================================================
      🔴 QUITAR ESTA ETIQUETA ANTES DE PUBLICAR DE VERDAD
      Mientras la web está en revisión, esto le dice a Google que NO la indexe.
-     Si se queda puesta el día del lanzamiento, la web NO APARECERÁ EN GOOGLE NUNCA.
      ========================================================================== -->
 <meta name="robots" content="noindex, nofollow">
-<link rel="stylesheet" href="estilos.css?v=7">
+<!-- WEB v5 (03/10/2026): fondo A (ondas arriba), aprobada por Alex. Estilos y código dentro de cada página: no usa estilos.css. -->
+<style>
+:root{
+  --fondo:#0b1016; --capa:#10171f; --capa2:#151e28; --linea:#1f2b38; --linea2:#2a3848;
+  --texto:#e7edf3; --suave:#a3afbc; --tenue:#7d8a98;
+  --verde:#35c3a1; --verde-osc:#0d5f52; --verde-vidrio:rgba(53,195,161,.10);
+  --ambar:#e3a664; --ambar-vidrio:rgba(227,166,100,.10);
+  --radio:16px; --ancho:1120px;
+  --mono:ui-monospace,"SF Mono","Cascadia Mono","Segoe UI Mono",Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--fondo)}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  color:var(--texto);background:var(--fondo);line-height:1.6;-webkit-font-smoothing:antialiased}
+.env{max-width:var(--ancho);margin:0 auto;padding:0 24px}
+section{padding:96px 0;position:relative}
+h1,h2,h3{line-height:1.14;letter-spacing:-.025em;font-weight:700;color:var(--texto)}
+h1{font-size:clamp(2.1rem,5.2vw,3.7rem);text-wrap:balance}
+h2{font-size:clamp(1.6rem,3.4vw,2.35rem);margin-bottom:14px;text-wrap:balance}
+h3{font-size:1.08rem;margin-bottom:6px}
+p{color:var(--suave)}
+.grande{font-size:clamp(1.03rem,1.8vw,1.2rem)}
+.estrecho{max-width:58ch}
+a{color:var(--verde)}
+.resalte{color:var(--verde)}
+:focus-visible{outline:2px solid var(--verde);outline-offset:3px;border-radius:6px}
+
+/* etiqueta de sección en monoespaciada */
+.etiqueta{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.76rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--verde);margin-bottom:16px}
+.etiqueta::before{content:"";width:18px;height:1px;background:currentColor;opacity:.7}
+.etiqueta.ambar{color:var(--ambar)}
+
+/* ── menú ─────────────────────────────────────────────────── */
+nav{position:sticky;top:0;z-index:30;background:rgba(11,16,22,.78);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--linea)}
+nav .env{display:flex;align-items:center;justify-content:space-between;height:68px;gap:18px}
+.marca{font-weight:700;letter-spacing:-.02em;text-decoration:none;color:var(--texto);font-size:1.04rem;line-height:1.15}
+.marca span{color:var(--verde)}
+.marca em{display:block;font-style:normal;font-weight:500;font-size:.73rem;color:var(--tenue);margin-top:-1px}
+.enlaces{display:flex;gap:24px;align-items:center}
+.enlaces a{color:var(--suave);text-decoration:none;font-size:.93rem;transition:color .2s}
+.enlaces a:hover{color:var(--texto)}
+.enlaces a[aria-current]{color:var(--texto);font-weight:600}
+.enlaces a:not(.btn){position:relative;padding-bottom:3px}
+.enlaces a:not(.btn)::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--verde);transition:width .22s}
+.enlaces a:not(.btn):hover::after,.enlaces a[aria-current]:not(.btn)::after{width:100%}
+.enlaces a[aria-current]:not(.btn)::after{background:var(--tenue)}
+
+/* ── botones ──────────────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--verde);color:#06201a!important;
+  text-decoration:none;padding:14px 26px;border-radius:999px;font-weight:650;font-size:.98rem;
+  transition:transform .15s,box-shadow .2s;box-shadow:0 0 0 0 rgba(53,195,161,0)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(53,195,161,.28)}
+.btn.chico{padding:9px 18px;font-size:.88rem}
+.btn.hueco{background:transparent;color:var(--texto)!important;border:1px solid var(--linea2)}
+.btn.hueco:hover{border-color:var(--verde);box-shadow:none}
+.acciones{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+
+/* ── portada con lluvia de símbolos ───────────────────────── */
+.hero{position:relative;overflow:hidden;padding:110px 0 84px;border-bottom:1px solid var(--linea)}
+#lluvia{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,var(--fondo) 0%,rgba(11,16,22,.88) 38%,rgba(11,16,22,.2) 72%,rgba(11,16,22,.4) 100%),
+             linear-gradient(0deg,var(--fondo) 0%,transparent 30%)}
+.hero .env{position:relative;z-index:2}
+.hero h1{max-width:17ch;margin-top:4px}
+.hero .etiqueta{font-size:.9rem;letter-spacing:.08em;color:#6fe0c3;font-weight:600}
+.hero .grande{margin:22px 0 34px;max-width:52ch}
+.datos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin-top:62px;max-width:760px;
+  background:var(--linea);border:1px solid var(--linea);border-radius:var(--radio);overflow:hidden}
+.datos div{background:rgba(16,23,31,.86);padding:18px 20px;backdrop-filter:blur(4px)}
+.datos b{display:block;font-family:var(--mono);font-size:1.45rem;font-weight:600;color:var(--texto);letter-spacing:-.02em}
+.datos span{font-size:.84rem;color:var(--tenue);line-height:1.4;display:block;margin-top:4px}
+
+/* ── cómo funciona: flujo + consola ───────────────────────── */
+.flujo{display:grid;gap:22px;margin-top:44px}
+@media(min-width:900px){.flujo{grid-template-columns:1.05fr .95fr;align-items:stretch}}
+.pasos{display:flex;flex-direction:column;gap:12px;position:relative}
+.paso{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;border:1px solid var(--linea);border-radius:var(--radio);
+  background:var(--capa);transition:border-color .4s,background .4s,transform .4s}
+.paso .ico{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
+  background:var(--capa2);border:1px solid var(--linea2);color:var(--suave);transition:all .4s}
+.paso p{font-size:.93rem;margin-top:2px}
+.paso.activo{border-color:rgba(53,195,161,.55);background:linear-gradient(90deg,rgba(53,195,161,.08),var(--capa) 70%)}
+.paso.activo .ico{color:var(--verde);border-color:rgba(53,195,161,.5);box-shadow:0 0 22px rgba(53,195,161,.18)}
+.salidas{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.salidas span{font-size:.8rem;color:var(--suave);border:1px solid var(--linea2);border-radius:999px;padding:4px 11px}
+.paso.activo .salidas span{border-color:rgba(53,195,161,.35);color:var(--texto)}
+
+.consola{border:1px solid var(--linea2);border-radius:var(--radio);background:#070b0f;overflow:hidden;
+  display:flex;flex-direction:column;min-height:300px;font-family:var(--mono);font-size:.84rem}
+.consola .barra{display:flex;align-items:center;gap:7px;padding:12px 16px;border-bottom:1px solid var(--linea);color:var(--tenue);font-size:.75rem}
+.consola .barra i{width:9px;height:9px;border-radius:50%;background:var(--linea2);display:block}
+.consola .barra em{font-style:normal;margin-left:8px}
+.consola .barra .vivo{margin-left:auto;color:var(--verde);display:flex;align-items:center;gap:6px}
+.consola .barra .vivo::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--verde);animation:latido 1.6s infinite}
+@keyframes latido{0%,100%{opacity:1}50%{opacity:.25}}
+.registro{list-style:none;padding:16px 18px;display:flex;flex-direction:column;gap:9px;flex:1}
+.registro li{display:flex;gap:10px;color:var(--suave);transform:translateY(6px);transition:opacity .35s,transform .35s}
+.js .registro li{opacity:0;transform:translateY(6px)}
+.js .registro li.ve{opacity:1;transform:none}
+.registro li .h{color:#7d8a98;flex:none}
+.registro li .ok{color:var(--verde)}
+.registro li .ent{color:var(--ambar)}
+.pie-fig{margin-top:16px;font-size:.86rem;color:var(--tenue)}
+
+/* ── servicios en pestañas ────────────────────────────────── */
+.fondo-capa{background:var(--capa);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.pestanas{display:flex;gap:6px;margin-top:38px;padding:6px;border:1px solid var(--linea);border-radius:999px;
+  background:var(--fondo);width:max-content;max-width:100%;overflow-x:auto;scrollbar-width:none}
+.pestanas::-webkit-scrollbar{display:none}
+.pestanas button{all:unset;cursor:pointer;display:flex;align-items:center;gap:8px;padding:11px 18px;border-radius:999px;
+  font-size:.93rem;font-weight:600;color:var(--suave);white-space:nowrap;transition:background .25s,color .25s}
+.pestanas button:hover{color:var(--texto)}
+.pestanas button[aria-selected="true"]{background:var(--capa2);color:var(--texto);box-shadow:inset 0 0 0 1px var(--linea2)}
+.pestanas button[aria-selected="true"] svg{color:var(--verde)}
+.pestanas button:focus-visible{outline:2px solid var(--verde);outline-offset:-2px}
+.panel{display:grid;gap:34px;margin-top:26px;padding:34px;border:1px solid var(--linea);border-radius:22px;background:var(--fondo)}
+@media(min-width:900px){.panel{grid-template-columns:1fr 1fr;align-items:center;padding:44px}}
+.panel[hidden]{display:none}
+.panel.entra{animation:entra .45s cubic-bezier(.2,.7,.3,1)}
+@keyframes entra{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.panel h3{font-size:1.45rem;margin-bottom:10px}
+.puntos{list-style:none;margin:22px 0 26px;display:flex;flex-direction:column;gap:12px}
+.puntos li{display:flex;gap:12px;align-items:center;color:var(--texto);font-size:.97rem}
+.puntos li svg{flex:none;color:var(--verde)}
+.mas{font-weight:600;text-decoration:none;display:inline-flex;gap:6px;align-items:center;padding:10px 0}
+.mas:hover{gap:10px}
+.mas{transition:gap .2s}
+.escena{border:1px solid var(--linea);border-radius:18px;background:var(--capa);aspect-ratio:4/3;position:relative;overflow:hidden}
+.escena svg{position:absolute;inset:0;width:100%;height:100%}
+
+
+/* ── las piezas se conectan ───────────────────────────────── */
+.conecta{margin-top:26px;padding:34px;border:1px solid var(--linea);border-radius:22px;background:var(--fondo)}
+.conecta h3{font-size:1.35rem;margin-bottom:8px}
+.cadena{list-style:none;display:grid;margin-top:30px}
+.cadena li{position:relative;display:grid;grid-template-columns:48px 1fr;gap:0 16px;padding-bottom:30px;align-content:start}
+.cadena li:last-child{padding-bottom:0}
+.nodo{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:var(--capa2);
+  border:1px solid rgba(53,195,161,.4);color:var(--verde);box-shadow:0 0 22px rgba(53,195,161,.12);position:relative;z-index:1}
+.cadena em{display:inline-block;font-style:normal;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--verde);border:1px solid rgba(53,195,161,.3);border-radius:999px;padding:7px 10px;margin-bottom:8px;line-height:1;text-box:trim-both cap alphabetic}
+.cadena b{display:block;color:var(--texto);font-weight:600;font-size:1rem;line-height:1.35}
+.hilo{position:absolute;left:23px;top:52px;bottom:4px;width:2px;background:var(--linea2);overflow:hidden}
+.hilo::after{content:"";position:absolute;left:-2px;top:-35%;width:6px;height:35%;border-radius:3px;
+  background:linear-gradient(180deg,transparent,var(--verde));animation:viajeV 2.4s linear infinite}
+.cadena li:nth-child(2) .hilo::after{animation-delay:1.2s}
+@keyframes viajeV{to{top:100%}}
+@keyframes viajeH{to{left:100%}}
+@media(min-width:820px){
+  .cadena{grid-template-columns:repeat(3,1fr);gap:18px}
+  .cadena li{grid-template-columns:1fr;gap:14px;padding-bottom:0;padding-right:24px}
+  .hilo{left:60px;right:-6px;top:23px;bottom:auto;width:auto;height:2px}
+  .hilo::after{top:-2px;left:-35%;width:35%;height:6px;background:linear-gradient(90deg,transparent,var(--verde));animation-name:viajeH}
+}
+@media(max-width:560px){.conecta{padding:24px}}
+
+
+/* ── menú: «Servicios» desplegable ─────────────────────────── */
+.desplegable{position:relative}
+.abre-sub{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:6px;color:var(--suave);font-size:.93rem;padding-bottom:3px;transition:color .2s}
+.abre-sub:hover,.abre-sub.actual,.desplegable.abierto .abre-sub{color:var(--texto)}
+.abre-sub.actual{font-weight:600}
+.abre-sub svg{transition:transform .2s}
+.desplegable.abierto .abre-sub svg{transform:rotate(180deg)}
+.abre-sub:focus-visible{outline:2px solid var(--verde);outline-offset:4px;border-radius:6px}
+.sub{position:absolute;top:100%;left:-16px;padding-top:14px;display:none;z-index:40}
+.desplegable.abierto .sub{display:block}
+.sub .caja{min-width:250px;background:var(--capa);border:1px solid var(--linea2);border-radius:14px;padding:8px;
+  box-shadow:0 18px 40px rgba(0,0,0,.5);display:flex;flex-direction:column}
+.sub a,.enlaces .sub a:not(.btn){display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:9px;color:var(--suave);font-size:.93rem}
+.sub a svg{color:var(--tenue);flex:none}
+.sub a:hover{background:var(--capa2);color:var(--texto)}
+.sub a:hover svg,.sub a[aria-current] svg{color:var(--verde)}
+.sub a[aria-current]{color:var(--texto);font-weight:600;background:var(--capa2)}
+.enlaces .sub a:not(.btn)::after{display:none}
+@media(hover:hover) and (min-width:861px){.desplegable:hover .sub{display:block}.desplegable:hover .abre-sub svg{transform:rotate(180deg)}}
+
+/* ── ¿Te pasa esto? ───────────────────────────────────────── */
+.problemas{display:grid;gap:14px;margin-top:38px}
+@media(min-width:760px){.problemas{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1040px){.problemas{grid-template-columns:repeat(3,1fr)}}
+.problema{border:1px solid var(--linea);border-radius:var(--radio);background:var(--capa);padding:24px;display:flex;flex-direction:column;
+  justify-content:space-between;gap:18px;transition:border-color .2s,transform .2s cubic-bezier(.2,.7,.3,1)}
+.problema:hover{border-color:var(--linea2);transform:translateY(-3px)}
+.problema q{quotes:"«" "»";font-size:1.12rem;font-weight:600;color:var(--texto);line-height:1.35}
+.problema .va{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.problema .va a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:.86rem;font-weight:600;color:var(--verde);
+  border:1px solid rgba(53,195,161,.3);border-radius:999px;padding:9px 14px;transition:background .2s,border-color .2s}
+.problema .va a:hover{background:var(--verde-vidrio);border-color:var(--verde)}
+
+
+/* ── WhatsApp ─────────────────────────────────────────────── */
+.btn.wa{background:#25d366;color:#05241a!important}
+.btn.wa:hover{box-shadow:0 8px 28px rgba(37,211,102,.3)}
+.wa-flota{position:fixed;right:20px;bottom:54px;z-index:60;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;
+  background:#25d366;color:#05241a;box-shadow:0 10px 30px rgba(0,0,0,.45);transition:transform .2s,opacity .3s}
+.wa-flota svg{width:28px;height:28px}
+.wa-flota:hover{transform:scale(1.07)}
+.wa-flota:focus-visible{outline:3px solid #e7edf3;outline-offset:3px}
+.wa-flota.oculto{opacity:0;pointer-events:none;transform:scale(.8);visibility:hidden;transition:transform .2s,opacity .3s,visibility 0s .3s}
+@media(max-width:400px){.wa-flota{bottom:70px}body:has(.borrador){padding-bottom:60px}}
+
+/* ── ¿Te pasa esto?, plegable ─────────────────────────────── */
+.plegable{position:relative;border:1px solid var(--linea);border-radius:22px;background:var(--capa);transition:border-color .2s}
+.plegable:hover{border-color:var(--linea2)}
+.pleg-cab{padding:30px 34px}
+.pleg-cab .etiqueta{margin-bottom:10px}
+.pleg-cab h2{margin:0}
+.plegable summary{list-style:none;cursor:pointer;position:absolute;top:50px;right:34px;border-radius:999px}
+.plegable details[open] summary{top:50px}
+.plegable summary::-webkit-details-marker{display:none}
+.plegable .abre{display:inline-flex;align-items:center;gap:10px;font-size:.9rem;font-weight:600;color:var(--verde);
+  border:1px solid rgba(53,195,161,.35);border-radius:999px;padding:10px 16px;white-space:nowrap;transition:background .2s}
+.plegable summary:hover .abre{background:var(--verde-vidrio)}
+.plegable .abre svg{transition:transform .25s}
+.plegable details[open] .abre svg{transform:rotate(180deg)}
+.plegable .abre .cerrar{display:none}
+.plegable details[open] .abre .ver{display:none}
+.plegable details[open] .abre .cerrar{display:inline}
+.plegable summary:focus-visible{outline:2px solid var(--verde);outline-offset:3px}
+.plegable .dentro-pleg{padding:0 34px 34px}
+.plegable .problemas{margin-top:0}
+.plegable details[open] .dentro-pleg{animation:entra .45s cubic-bezier(.2,.7,.3,1)}
+@media(max-width:560px){.pleg-cab{padding:24px 24px 16px}.plegable summary{position:static;display:block;padding:0 24px 24px}.plegable .dentro-pleg{padding:0 24px 24px}}
+
+/* ── fondo de ondas: se apaga detrás del texto (máscara en CSS, no en cada fotograma) ── */
+@media(min-width:701px){#lluvia{-webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,.4) 37%,#000 62%);mask-image:linear-gradient(90deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,.4) 37%,#000 62%)}}
+
+/* ── cómo trabajo ─────────────────────────────────────────── */
+.rejilla{display:grid;gap:18px;margin-top:40px}
+@media(min-width:820px){.tres{grid-template-columns:repeat(3,1fr)}.dos{grid-template-columns:1fr 1fr}}
+.tarjeta{background:var(--capa);border:1px solid var(--linea);border-radius:var(--radio);padding:26px;
+  transition:transform .2s cubic-bezier(.2,.7,.3,1),border-color .2s}
+.tarjeta:hover{transform:translateY(-4px);border-color:var(--linea2)}
+.tarjeta .ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin-bottom:18px;
+  background:var(--verde-vidrio);color:var(--verde);border:1px solid rgba(53,195,161,.25)}
+.tarjeta p{font-size:.95rem}
+
+/* ── caso real ────────────────────────────────────────────── */
+.caso{display:grid;gap:22px;margin-top:40px}
+@media(min-width:900px){.caso{grid-template-columns:.9fr 1.1fr}}
+.cifra{border:1px solid var(--linea);border-radius:var(--radio);background:var(--capa);padding:30px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.anillo{position:relative;width:170px;height:170px;margin-bottom:8px}
+.anillo svg{width:100%;height:100%;transform:rotate(-90deg)}
+.anillo .pista{stroke:var(--linea2)}
+.anillo .arco{stroke:var(--ambar);stroke-linecap:round;stroke-dasharray:440.5;stroke-dashoffset:440;transition:stroke-dashoffset 1.8s cubic-bezier(.2,.7,.3,1)}
+.anillo.dentro .arco{stroke-dashoffset:0}
+.anillo b{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--mono);font-size:2.6rem;font-weight:600;letter-spacing:-.03em}
+.anillo b small{display:block;font-size:.85rem;color:var(--tenue);font-weight:500;text-align:center;letter-spacing:0;margin-top:-4px}
+.cifra .titular{font-size:1.2rem;font-weight:650;color:var(--texto)}
+.cifra .fuente{font-size:.82rem;color:var(--tenue)}
+.antes{border:1px solid var(--linea);border-radius:var(--radio);background:var(--capa);padding:28px}
+.antes h3{font-family:var(--mono);font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tenue);font-weight:500;margin-bottom:16px}
+.tachar{list-style:none;display:flex;flex-direction:column;gap:10px}
+.tachar li{display:flex;align-items:center;gap:12px;color:var(--suave);font-size:.96rem;position:relative}
+.tachar li i{flex:none;width:22px;height:22px;border-radius:6px;border:1px solid var(--linea2);display:grid;place-items:center;
+  font-style:normal;font-size:.7rem;font-family:var(--mono);color:var(--tenue);transition:all .35s}
+.tachar li span{text-decoration:line-through 1.5px transparent;transition:text-decoration-color .5s,color .5s}
+.tachar li.hecho span{color:var(--tenue)}
+.tachar li.hecho span{text-decoration-color:var(--ambar)}
+.tachar li.hecho i{background:var(--ambar-vidrio);border-color:rgba(227,166,100,.4);color:var(--ambar)}
+.ahora{margin-top:20px;padding-top:18px;border-top:1px dashed var(--linea2);display:flex;gap:12px;align-items:center;
+  color:var(--texto);font-weight:600;transition:all .5s}
+.js .ahora{opacity:0;transform:translateY(6px)}
+.js .ahora.ve{opacity:1;transform:none}
+.ahora svg{color:var(--verde);flex:none}
+blockquote{margin-top:22px;border:1px solid var(--linea);border-left:3px solid var(--verde);border-radius:var(--radio);
+  background:var(--capa);padding:26px 28px;font-size:1.04rem;color:var(--texto)}
+blockquote footer{margin-top:12px;font-size:.88rem;color:var(--tenue)}
+
+/* ── en desarrollo ────────────────────────────────────────── */
+.estado{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ambar);margin-bottom:12px}
+.estado::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ambar);animation:latido 2s infinite}
+
+/* ── contacto ─────────────────────────────────────────────── */
+.cta{border-top:1px solid var(--linea);background:
+  radial-gradient(700px 320px at 85% 0%,rgba(53,195,161,.10),transparent 65%),var(--fondo)}
+.como{list-style:none;display:grid;gap:14px;margin:34px 0 34px;counter-reset:c}
+@media(min-width:820px){.como{grid-template-columns:repeat(3,1fr)}}
+.como li{counter-increment:c;border:1px solid var(--linea);border-radius:var(--radio);padding:20px 22px;background:var(--capa);color:var(--suave);font-size:.95rem}
+.como li::before{content:"0" counter(c);display:block;font-family:var(--mono);color:var(--verde);font-size:.8rem;margin-bottom:8px}
+.como li b{color:var(--texto);font-weight:600}
+
+footer.pie{padding:36px 0 44px;font-size:.87rem;color:var(--tenue);border-top:1px solid var(--linea)}
+.pie .env{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.pie a{color:var(--suave);text-decoration:none;margin-right:18px;display:inline-block;padding:10px 0}
+.pie a:hover{color:var(--verde)}
+
+/* ── aparición al bajar ───────────────────────────────────── */
+.js .rev{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+.js .rev.dentro{opacity:1;transform:none}
+@media print{.js .rev,.js .registro li,.js .ahora{opacity:1!important;transform:none!important}.panel[hidden]{display:grid}.borrador,#lluvia{display:none}}
+.rev.d1{transition-delay:.08s}.rev.d2{transition-delay:.16s}
+
+section[id],.panel{scroll-margin-top:84px}
+@media(max-width:380px){.pestanas button[role="tab"]{font-size:.71rem;padding:10px 2px;letter-spacing:-.01em}}
+
+/* ── 🔴 BORRAR ESTE BLOQUE ANTES DE PUBLICAR ───────────────── */
+.borrador{position:fixed;bottom:0;left:0;right:0;z-index:99;background:#8a531c;color:#fff;
+  text-align:center;font-size:.8rem;padding:7px 12px}
+body:has(.borrador){padding-bottom:34px}
+
+/* ── menú del móvil ───────────────────────────────────────── */
+.abrir-menu{display:none;background:none;border:0;padding:10px;cursor:pointer;width:44px;height:44px;flex-direction:column;justify-content:center;gap:5px}
+.abrir-menu span{display:block;height:2px;width:22px;background:var(--texto);border-radius:2px;transition:transform .25s,opacity .18s}
+.abrir-menu.activo span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.abrir-menu.activo span:nth-child(2){opacity:0}
+.abrir-menu.activo span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:860px){
+  .abrir-menu{display:flex}
+  nav .env{position:relative}
+  .enlaces{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;
+    background:var(--capa);border-bottom:1px solid var(--linea);box-shadow:0 18px 40px rgba(0,0,0,.45);
+    max-height:0;overflow:hidden;transition:max-height .3s cubic-bezier(.2,.7,.3,1)}
+  .enlaces:not(.abierto){visibility:hidden;transition:max-height .3s cubic-bezier(.2,.7,.3,1),visibility 0s .3s}
+  .enlaces.abierto{max-height:calc(100vh - 110px);overflow-y:auto}
+  .pestanas{width:100%;display:grid;grid-template-columns:repeat(6,1fr);border-radius:18px}
+  .pestanas button{grid-column:span 2}
+  .pestanas button:nth-child(n+4){grid-column:span 3}
+  .pestanas button{flex-direction:column;justify-content:center;white-space:normal;text-align:center;min-height:56px;padding:10px 6px;font-size:.84rem;line-height:1.2;border-radius:14px}
+
+  .enlaces a,.enlaces a:not(.btn){display:block;padding:17px 24px;font-size:1.02rem;border-top:1px solid var(--linea)}
+  .enlaces a:not(.btn)::after{display:none}
+  .enlaces a[aria-current]{background:var(--capa2);box-shadow:inset 3px 0 0 var(--verde)}
+  .enlaces a.btn{margin:16px 24px 22px;text-align:center;padding:15px 24px;display:flex}
+  .desplegable{border-top:1px solid var(--linea)}
+  .abre-sub{display:flex;justify-content:space-between;width:100%;box-sizing:border-box;padding:17px 24px;font-size:1.02rem}
+  .abre-sub.actual{box-shadow:inset 3px 0 0 var(--verde)}
+  .sub{position:static;padding:0 0 8px}
+  .sub .caja{min-width:0;background:none;border:0;box-shadow:none;padding:0 12px}
+  .enlaces .sub a,.enlaces .sub a:not(.btn){border-top:0;padding:13px 16px 13px 28px;font-size:.98rem}
+}
+@media(max-width:560px){
+  section{padding:72px 0}
+  .hero{padding:72px 0 56px}
+  .hero .etiqueta{font-size:.78rem;letter-spacing:.05em}
+  .hero::after{background:linear-gradient(180deg,rgba(11,16,22,.35) 0%,rgba(11,16,22,.62) 50%,var(--fondo) 100%)}
+  .acciones{flex-direction:column;align-items:stretch}
+  .acciones .btn{width:100%}
+  .datos{grid-template-columns:1fr;margin-top:44px}
+  .datos div{display:flex;align-items:baseline;gap:14px}
+  .datos b{font-size:1.15rem;min-width:104px;white-space:nowrap}
+  .datos span{margin-top:0}
+  .marca em{font-size:.7rem}
+  .panel{padding:24px}
+  .anillo{width:140px;height:140px}
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .rev,.registro li,.ahora,.js .rev,.js .registro li,.js .ahora{opacity:1;transform:none;transition:none}
+  .tarjeta:hover,.btn:hover{transform:none}
+  .panel.entra{animation:none}
+  .consola .barra .vivo::before,.estado::before{animation:none}
+  .anillo .arco{transition:none}
+  .escena *{animation:none!important}
+  .hilo::after{display:none}
+  .plegable details[open] .dentro-pleg{animation:none}
+  .plegable .abre svg{transition:none}
+  .wa-flota,.wa-flota.oculto{transition:none}
+  .s1-fila,.s2-b,.s4-b,.s5-c{opacity:1!important}
+  .s1-sobre{opacity:1!important;transform:translateX(118px)!important}
+  .tachar li span{transition:none}
+}
+
+.saltar{position:absolute;left:12px;top:-60px;z-index:100;background:var(--verde);color:#06201a;padding:10px 16px;border-radius:10px;font-weight:600;text-decoration:none}
+.saltar:focus{top:12px}
+.cadena:not(.en-vista) .hilo::after{animation-play-state:paused}
+@media print{.js .rev,.js .registro li,.js .ahora{transition:none!important}.anillo .arco{stroke-dashoffset:0!important}
+  .fm-burbuja{opacity:1!important;transform:none!important}.wa-flota,.saltar{display:none!important}}
+#problemas{padding-bottom:28px}
+#en-desarrollo{padding-top:28px}
+</style>
 </head>
 <body>
-<nav>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<nav aria-label="Principal">
   <div class="env">
-    <a class="marca" href="index.html">Cero a Mano<span>.</span> <em>Alejandro de la Rosa</em></a>
+    <a class="marca" href="#">Cero a Mano<span>.</span> <em>Alejandro de la Rosa</em></a>
     <button class="abrir-menu" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
       <span></span><span></span><span></span>
     </button>
-    <span class="enlaces" id="menu">
-      <a href="index.html" aria-current="page">Inicio</a>
-      <a href="automatizar-reservas-y-pedidos.html">Automatización</a>
-      <a href="whatsapp-business.html">WhatsApp Business</a>
-      <a href="seo-para-negocios.html">SEO</a>
+    <div class="enlaces" id="menu">
+      <a href="#" aria-current="page">Inicio</a>
+      <div class="desplegable">
+        <button class="abre-sub" aria-expanded="false" aria-controls="sub-servicios">Servicios <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="sub" id="sub-servicios"><div class="caja">
+          <a href="automatizar-reservas-y-pedidos.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8.5M20 4v4.5h-4.5M20 12a8 8 0 0 1-13.7 5.7L4 15.5M4 20v-4.5h4.5"/></svg>Automatización</a>
+          <a href="whatsapp-business.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l2.1-5.7A8.4 8.4 0 1 1 21 11.5Z"/></svg>WhatsApp Business</a>
+          <a href="webs.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2.5"/><path d="M3 8h18M8 21h8M12 18v3"/></svg>Webs</a>
+          <a href="seo-para-negocios.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>SEO</a>
+          <a href="ficha-de-google.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Ficha de Google</a>
+        </div></div>
+      </div>
       <a href="caso-free-tours-malta.html">Caso real</a>
       <a href="#contacto" class="btn chico">Contactar</a>
-    </span>
+    </div>
   </div>
 </nav>
 
+<main id="contenido">
 <header class="hero">
+  <canvas id="lluvia" aria-hidden="true"></canvas>
   <div class="env">
-    <h1>Tu negocio no debería repetir el mismo trabajo todos los días.</h1>
-    <p class="grande">Pasar pedidos de un sitio a otro, registrar reservas a mano, buscar los datos de un cliente, redactar la misma confirmación una y otra vez. Da igual con qué herramientas trabajes: las tareas que se repiten a diario casi siempre pueden ejecutarse solas.</p>
+    <span class="etiqueta">Automatización de procesos</span>
+    <h1>Tu negocio no debería repetir <span class="resalte">el mismo trabajo</span> todos los días.</h1>
+    <p class="grande">Pedidos, reservas, contactos y confirmaciones que hoy haces a mano pasan a hacerse solos, con las herramientas que ya usas.</p>
     <div class="acciones">
       <a href="#contacto" class="btn">Explícame tu proceso</a>
       <a href="caso-free-tours-malta.html" class="btn hueco">Ver un caso real</a>
     </div>
+    <div class="datos">
+      <div><b>2 h/día</b><span>de ahorro como mínimo, según calcula el cliente del caso real</span></div>
+      <div><b>15 min</b><span>cada cuánto revisa su sistema lo que entra</span></div>
+      <div><b>Julio 2026</b><span>desde entonces, en producción a diario</span></div>
+    </div>
   </div>
 </header>
 
-<section>
+<section id="como">
   <div class="env">
     <span class="etiqueta">Cómo funciona</span>
     <h2>De la entrada al resultado, sin que nadie copie nada</h2>
-    <p class="grande estrecho">Este es el recorrido de un sistema que tengo en funcionamiento. Entra por correo y acaba donde el cliente lo necesita. Entre el primer recuadro y el último no hay ningún paso manual.</p>
-    
-<div class="diagrama rev">
-<svg class="diag-ancho" viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" role="img"
-     aria-label="Diagrama: un correo entra, el sistema lo lee y extrae los datos, y el resultado se reparte en hoja actualizada, contacto creado y confirmación enviada.">
-  <defs>
-    <marker id="f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-      <path d="M0,0 L10,5 L0,10 z" fill="#9aa3b0"/>
-    </marker>
-  </defs>
 
-  <!-- entrada -->
-  <rect x="8" y="96" width="180" height="68" rx="12" fill="#fdf9f3" stroke="#e6d9c6"/>
-  <text x="98" y="124" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#12161c">Llega un correo</text>
-  <text x="98" y="145" text-anchor="middle" font-family="system-ui,sans-serif" font-size="12.5" fill="#8b7355">reserva, pedido o aviso</text>
-
-  <line x1="192" y1="130" x2="252" y2="130" stroke="#9aa3b0" stroke-width="2" marker-end="url(#f)"/>
-
-  <!-- motor -->
-  <rect x="256" y="56" width="230" height="148" rx="14" fill="#0d5f52"/>
-  <text x="371" y="88" text-anchor="middle" font-family="system-ui,sans-serif" font-size="15" font-weight="700" fill="#fff">El sistema, cada 15 min</text>
-  <text x="286" y="118" font-family="system-ui,sans-serif" font-size="13" fill="#bfe0d8">1 · Lee y clasifica el aviso</text>
-  <text x="286" y="143" font-family="system-ui,sans-serif" font-size="13" fill="#bfe0d8">2 · Extrae los datos</text>
-  <text x="286" y="168" font-family="system-ui,sans-serif" font-size="13" fill="#bfe0d8">3 · Comprueba duplicados</text>
-
-  <path d="M490,130 H520 V50 H560" fill="none" stroke="#9aa3b0" stroke-width="2" marker-end="url(#f)"/>
-  <path d="M490,130 H560" fill="none" stroke="#9aa3b0" stroke-width="2" marker-end="url(#f)"/>
-  <path d="M490,130 H520 V210 H560" fill="none" stroke="#9aa3b0" stroke-width="2" marker-end="url(#f)"/>
-
-  <!-- salidas -->
-  <rect x="564" y="24" width="326" height="52" rx="11" fill="#e4f0ed" stroke="#c3ded7"/>
-  <text x="584" y="55" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#0d5f52">Tus datos, donde los necesitas</text>
-
-  <rect x="564" y="104" width="326" height="52" rx="11" fill="#e4f0ed" stroke="#c3ded7"/>
-  <text x="584" y="135" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#0d5f52">El contacto, dado de alta</text>
-
-  <rect x="564" y="184" width="326" height="52" rx="11" fill="#e4f0ed" stroke="#c3ded7"/>
-  <text x="584" y="215" font-family="system-ui,sans-serif" font-size="14" font-weight="600" fill="#0d5f52">La confirmación, enviada</text>
-  <circle class="pulso" r="5" fill="#b8712a">
-    <animateMotion dur="3.6s" repeatCount="indefinite" keyPoints="0;1" keyTimes="0;1" calcMode="linear"
-      path="M192,130 H252"/>
-    <animate attributeName="opacity" values="0;1;1;0" dur="3.6s" repeatCount="indefinite"/>
-  </circle>
-  <circle class="pulso" r="5" fill="#8fd0c2">
-    <animateMotion dur="3.6s" begin="1.2s" repeatCount="indefinite"
-      path="M490,130 H520 V50 H556"/>
-    <animate attributeName="opacity" values="0;1;1;0" dur="3.6s" begin="1.2s" repeatCount="indefinite"/>
-  </circle>
-  <circle class="pulso" r="5" fill="#8fd0c2">
-    <animateMotion dur="3.6s" begin="1.45s" repeatCount="indefinite" path="M490,130 H556"/>
-    <animate attributeName="opacity" values="0;1;1;0" dur="3.6s" begin="1.45s" repeatCount="indefinite"/>
-  </circle>
-  <circle class="pulso" r="5" fill="#8fd0c2">
-    <animateMotion dur="3.6s" begin="1.7s" repeatCount="indefinite"
-      path="M490,130 H520 V210 H556"/>
-    <animate attributeName="opacity" values="0;1;1;0" dur="3.6s" begin="1.7s" repeatCount="indefinite"/>
-  </circle>
-</svg>
-<svg class="diag-movil" viewBox="0 0 360 540" xmlns="http://www.w3.org/2000/svg" role="img"
-     aria-label="Diagrama vertical: llega un correo, el sistema lo procesa, y de ahi salen tres caminos: tus datos donde los necesitas, el contacto dado de alta y la confirmacion enviada.">
-  <defs>
-    <marker id="fv" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-      <path d="M0,0 L10,5 L0,10 z" fill="#9aa3b0"/>
-    </marker>
-  </defs>
-
-  <rect x="60" y="4" width="240" height="62" rx="12" fill="#fdf9f3" stroke="#e6d9c6"/>
-  <text x="180" y="30" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#12161c">Llega un correo</text>
-  <text x="180" y="51" text-anchor="middle" font-family="system-ui,sans-serif" font-size="13.5" fill="#8b7355">reserva, pedido o aviso</text>
-
-  <line x1="180" y1="70" x2="180" y2="96" stroke="#9aa3b0" stroke-width="2" marker-end="url(#fv)"/>
-
-  <rect x="20" y="102" width="320" height="140" rx="14" fill="#0d5f52"/>
-  <text x="180" y="130" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#fff">El sistema, cada 15 min</text>
-  <text x="44" y="162" font-family="system-ui,sans-serif" font-size="14" fill="#bfe0d8">1 · Lee y clasifica el aviso</text>
-  <text x="44" y="190" font-family="system-ui,sans-serif" font-size="14" fill="#bfe0d8">2 · Extrae los datos</text>
-  <text x="44" y="218" font-family="system-ui,sans-serif" font-size="14" fill="#bfe0d8">3 · Comprueba duplicados</text>
-
-  <path d="M180,242 V266 H42 V306 H72" fill="none" stroke="#9aa3b0" stroke-width="2" marker-end="url(#fv)"/>
-  <path d="M42,306 V390 H72" fill="none" stroke="#9aa3b0" stroke-width="2" marker-end="url(#fv)"/>
-  <path d="M42,390 V474 H72" fill="none" stroke="#9aa3b0" stroke-width="2" marker-end="url(#fv)"/>
-
-  <rect x="78" y="278" width="262" height="56" rx="12" fill="#e4f0ed" stroke="#c3ded7"/>
-  <text x="209" y="312" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14.5" font-weight="600" fill="#0d5f52">Tus datos, donde los necesitas</text>
-
-  <rect x="78" y="362" width="262" height="56" rx="12" fill="#e4f0ed" stroke="#c3ded7"/>
-  <text x="209" y="396" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14.5" font-weight="600" fill="#0d5f52">El contacto, dado de alta</text>
-
-  <rect x="78" y="446" width="262" height="56" rx="12" fill="#e4f0ed" stroke="#c3ded7"/>
-  <text x="209" y="480" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14.5" font-weight="600" fill="#0d5f52">La confirmación, enviada</text>
-
-  <circle class="pulso" r="6" fill="#b8712a">
-    <animateMotion dur="4s" repeatCount="indefinite" path="M180,70 V92"/>
-    <animate attributeName="opacity" values="0;1;1;0" dur="4s" repeatCount="indefinite"/>
-  </circle>
-  <circle class="pulso" r="6" fill="#8fd0c2">
-    <animateMotion dur="4s" begin="1.1s" repeatCount="indefinite" path="M180,242 V266 H42 V306 H68"/>
-    <animate attributeName="opacity" values="0;1;1;0" dur="4s" begin="1.1s" repeatCount="indefinite"/>
-  </circle>
-  <circle class="pulso" r="6" fill="#8fd0c2">
-    <animateMotion dur="4s" begin="1.5s" repeatCount="indefinite" path="M180,242 V266 H42 V390 H68"/>
-    <animate attributeName="opacity" values="0;1;1;0" dur="4s" begin="1.5s" repeatCount="indefinite"/>
-  </circle>
-  <circle class="pulso" r="6" fill="#8fd0c2">
-    <animateMotion dur="4s" begin="1.9s" repeatCount="indefinite" path="M180,242 V266 H42 V474 H68"/>
-    <animate attributeName="opacity" values="0;1;1;0" dur="4s" begin="1.9s" repeatCount="indefinite"/>
-  </circle>
-</svg>
-<p class="pie-fig">El esquema del sistema que mantengo en producción para una empresa de free tours.</p>
-</div>
-
-  </div>
-</section>
-
-
-<section class="arena">
-  <div class="env">
-    <span class="etiqueta ambar">Cómo trabajo</span>
-    <h2>No te cambio la forma de trabajar</h2>
-    <p class="grande estrecho">Esto es lo que más me diferencia y lo digo desde el principio: no llego con un método cerrado al que te tengas que adaptar. Primero me cuentas cómo trabajas hoy, paso a paso y con tus palabras, y a partir de ahí automatizo ese proceso tuyo intentando tocarlo lo menos posible.</p>
-    <div class="rejilla tres">
-      <div class="tarjeta rev">
-        <h3>Tus herramientas</h3>
-        <p>Seguimos con lo que ya tienes, sea una hoja de cálculo, un programa de gestión, una agenda o un cuaderno. Cambiar de herramienta cuesta dinero y obliga a todo el mundo a reaprender, y casi nunca hace falta.</p>
+    <div class="flujo">
+      <div class="pasos">
+        <div class="paso rev" data-paso="0">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5.1 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.5-6.9A2 2 0 0 0 16.8 4H7.2a2 2 0 0 0-1.7 1.1Z"/></svg></div>
+          <div><h3>Entra una reserva, un pedido o un aviso</h3><p>Da igual por dónde llegue: el correo, tu web o la plataforma con la que ya trabajas. Me adapto a cómo te llega.</p></div>
+        </div>
+        <div class="paso rev d1" data-paso="1">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div>
+          <div><h3>El sistema lo procesa</h3><p>Lo lee, lo clasifica, extrae los datos y comprueba que no esté repetido.</p></div>
+        </div>
+        <div class="paso rev d2" data-paso="2">
+          <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <div><h3>Queda hecho</h3>
+            <div class="salidas"><span>Datos donde los necesitas</span><span>Contacto dado de alta</span><span>Confirmación enviada</span></div>
+          </div>
+        </div>
       </div>
-      <div class="tarjeta rev">
-        <h3>Tu orden</h3>
-        <p>Si primero apuntas y luego confirmas, el sistema hace lo mismo en ese orden. No vengo a corregirte cómo llevas tu negocio, que lo conoces tú mucho mejor que yo.</p>
-      </div>
-      <div class="tarjeta rev">
-        <h3>Y si algo hay que cambiar</h3>
-        <p>A veces aparece un paso que impide automatizar el resto. Cuando pasa, te lo explico, te digo qué ganas y qué pierdes, y decides tú. No lo cambio por mi cuenta.</p>
+
+      <div class="consola rev d1" role="img" aria-label="Simulación del registro del sistema: entra una reserva, se clasifica, se extraen los datos, se comprueba que no está duplicado y se actualiza la hoja, se crea el contacto y se envía la confirmación.">
+        <div class="barra"><i></i><i></i><i></i><em>simulación</em><span class="vivo">en marcha</span></div>
+        <ol class="registro" aria-hidden="true">
+          <li data-p="0"><span class="h">09:15:02</span><span><span class="ent">entra</span> reserva nueva</span></li>
+          <li data-p="1"><span class="h">09:15:03</span><span>clasificado como reserva</span></li>
+          <li data-p="1"><span class="h">09:15:03</span><span>datos extraídos</span></li>
+          <li data-p="1"><span class="h">09:15:04</span><span>no está repetido</span></li>
+          <li data-p="2"><span class="h">09:15:05</span><span><span class="ok">✓</span> hoja actualizada</span></li>
+          <li data-p="2"><span class="h">09:15:06</span><span><span class="ok">✓</span> contacto creado</span></li>
+          <li data-p="2"><span class="h">09:15:07</span><span><span class="ok">✓</span> confirmación enviada</span></li>
+        </ol>
       </div>
     </div>
   </div>
 </section>
-<section class="crema">
+
+<section class="fondo-capa" id="servicios">
   <div class="env">
     <span class="etiqueta">Servicios</span>
-    <h2>Tres formas de quitarte trabajo de encima</h2>
-    <p class="grande estrecho">Se contratan por separado o combinadas. Cada una resuelve un problema distinto.</p>
-    <div class="rejilla tres">
-      <div class="tarjeta link rev">
-        <span class="num">1</span>
+    <h2>Lo que puedo hacer por tu negocio</h2>
+
+    <div class="pestanas" role="tablist" aria-label="Servicios">
+      <button role="tab" id="t1" data-slug="automatizacion" aria-controls="s-automatizacion" aria-selected="true">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8.5M20 4v4.5h-4.5M20 12a8 8 0 0 1-13.7 5.7L4 15.5M4 20v-4.5h4.5"/></svg>
+        Automatización</button>
+      <button role="tab" id="t2" data-slug="whatsapp" aria-controls="s-whatsapp" aria-selected="false" tabindex="-1">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l2.1-5.7A8.4 8.4 0 1 1 21 11.5Z"/></svg>
+        WhatsApp Business</button>
+      <button role="tab" id="t4" data-slug="webs" aria-controls="s-webs" aria-selected="false" tabindex="-1">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2.5"/><path d="M3 8h18M8 21h8M12 18v3"/></svg>
+        Webs</button>
+      <button role="tab" id="t3" data-slug="seo" aria-controls="s-seo" aria-selected="false" tabindex="-1">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        SEO</button>
+      <button role="tab" id="t5" data-slug="ficha" aria-controls="s-ficha" aria-selected="false" tabindex="-1">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        Ficha de Google</button>
+    </div>
+
+    <div class="panel" role="tabpanel" tabindex="0" id="s-automatizacion" aria-labelledby="t1">
+      <div>
         <h3>Automatizar reservas y pedidos</h3>
-        <p>Lo que te llega por correo o por formulario acaba solo donde tú lo lleves. El contacto se crea, la confirmación se envía y tú te limitas a comprobar que está hecho.</p>
-        <a class="mas" href="automatizar-reservas-y-pedidos.html">Ver en detalle →</a>
+        <p>Lo que te entra, llegue por donde llegue, acaba solo donde tú lo lleves. Tu parte es comprobar que está hecho.</p>
+        <ul class="puntos">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Los datos, en tu hoja o tu programa</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>El contacto, creado</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>La confirmación, enviada</li>
+        </ul>
+        <a class="mas" href="automatizar-reservas-y-pedidos.html">Ver en detalle <span aria-hidden="true">→</span></a>
       </div>
-      <div class="tarjeta link rev">
-        <span class="num">2</span>
+      <div class="escena" aria-hidden="true">
+        <svg viewBox="0 0 400 300">
+          <style>
+            .s1-sobre{animation:s1v 3.2s ease-in-out infinite}
+            @keyframes s1v{0%{transform:translateX(0);opacity:0}12%{opacity:1}45%{transform:translateX(118px);opacity:1}55%,100%{transform:translateX(118px);opacity:0}}
+            .s1-fila{opacity:0;animation:s1f 3.2s ease-out infinite}
+            @keyframes s1f{0%,50%{opacity:0;transform:translateX(-8px)}62%,90%{opacity:1;transform:none}100%{opacity:0}}
+          </style>
+          <rect x="30" y="110" width="80" height="60" rx="10" fill="#151e28" stroke="#2a3848"/>
+          <g class="s1-sobre"><rect x="48" y="118" width="44" height="44" rx="5" fill="none" stroke="#e3a664" stroke-width="2"/><path d="M57 131h26M57 140h26M57 149h16" stroke="#e3a664" stroke-width="2" stroke-linecap="round"/></g>
+          <path d="M120 140h60" stroke="#2a3848" stroke-width="2" stroke-dasharray="4 5"/>
+          <rect x="190" y="70" width="180" height="160" rx="12" fill="#10171f" stroke="#2a3848"/>
+          <rect x="190" y="70" width="180" height="30" rx="12" fill="#151e28"/>
+          <g fill="#1f2b38"><rect x="204" y="112" width="152" height="18" rx="4"/><rect x="204" y="138" width="152" height="18" rx="4"/></g>
+          <g class="s1-fila"><rect x="204" y="164" width="152" height="18" rx="4" fill="rgba(53,195,161,.18)" stroke="#35c3a1"/><path d="m340 169 4 4 7-8" fill="none" stroke="#35c3a1" stroke-width="2"/></g>
+          <g fill="#1f2b38"><rect x="204" y="190" width="100" height="18" rx="4"/></g>
+          <circle cx="206" cy="85" r="4" fill="#2a3848"/><circle cx="218" cy="85" r="4" fill="#2a3848"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="panel" role="tabpanel" tabindex="0" id="s-whatsapp" aria-labelledby="t2">
+      <div>
         <h3>Ordenar la gestión de clientes</h3>
-        <p>WhatsApp Business configurado con criterio: etiquetas por tipo y estado, respuestas rápidas y una hoja donde ves quién es cada cliente y qué falta por hacer.</p>
-        <a class="mas" href="whatsapp-business.html">Ver en detalle →</a>
+        <p>WhatsApp Business con etiquetas y respuestas rápidas, y una hoja donde ves quién es cada cliente y qué falta por hacer.</p>
+        <ul class="puntos">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Etiquetas por tipo y estado</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Respuestas rápidas</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Lo pendiente, a la vista</li>
+        </ul>
+        <a class="mas" href="whatsapp-business.html">Ver en detalle <span aria-hidden="true">→</span></a>
       </div>
-      <div class="tarjeta link rev">
-        <span class="num ambar">3</span>
+      <div class="escena" aria-hidden="true">
+        <svg viewBox="0 0 400 300">
+          <style>
+            .s2-b{opacity:0;animation:s2 4.5s ease-out infinite}
+            .s2-b.b2{animation-delay:.6s}.s2-b.b3{animation-delay:1.2s}
+            @keyframes s2{0%{opacity:0;transform:translateY(10px)}12%,85%{opacity:1;transform:none}100%{opacity:0}}
+          </style>
+          <g class="s2-b"><rect x="40" y="56" width="200" height="50" rx="14" fill="#151e28" stroke="#2a3848"/><rect x="56" y="72" width="120" height="8" rx="4" fill="#2a3848"/><rect x="56" y="87" width="80" height="8" rx="4" fill="#2a3848"/>
+            <rect x="252" y="68" width="100" height="26" rx="13" fill="rgba(227,166,100,.12)" stroke="#e3a664"/><text x="302" y="86" text-anchor="middle" font-family="ui-monospace,monospace" font-size="12" fill="#e3a664">nuevo</text></g>
+          <g class="s2-b b2"><rect x="40" y="124" width="200" height="50" rx="14" fill="#151e28" stroke="#2a3848"/><rect x="56" y="140" width="140" height="8" rx="4" fill="#2a3848"/><rect x="56" y="155" width="60" height="8" rx="4" fill="#2a3848"/>
+            <rect x="252" y="136" width="100" height="26" rx="13" fill="rgba(53,195,161,.12)" stroke="#35c3a1"/><text x="302" y="154" text-anchor="middle" font-family="ui-monospace,monospace" font-size="12" fill="#35c3a1">en curso</text></g>
+          <g class="s2-b b3"><rect x="40" y="192" width="200" height="50" rx="14" fill="#151e28" stroke="#2a3848"/><rect x="56" y="208" width="100" height="8" rx="4" fill="#2a3848"/><rect x="56" y="223" width="130" height="8" rx="4" fill="#2a3848"/>
+            <rect x="252" y="204" width="100" height="26" rx="13" fill="rgba(163,175,188,.08)" stroke="#7d8a98"/><text x="302" y="222" text-anchor="middle" font-family="ui-monospace,monospace" font-size="12" fill="#a3afbc">hecho</text></g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="panel" role="tabpanel" tabindex="0" id="s-webs" aria-labelledby="t4">
+      <div>
+        <h3>Montar tu web</h3>
+        <p>Una web para tu negocio, bien pensada para el ordenador y para el móvil, y preparada para que Google la lea desde el primer día.</p>
+        <ul class="puntos">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Se ve bien en el ordenador y en el móvil</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Preparada para Google</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Tu contacto, siempre a mano</li>
+        </ul>
+        <a class="mas" href="webs.html">Ver en detalle <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="escena" aria-hidden="true">
+        <svg viewBox="0 0 400 300">
+          <style>
+            .s4-b{opacity:0;animation:s4 4.2s ease-out infinite}
+            .s4-b.b2{animation-delay:.35s}.s4-b.b3{animation-delay:.7s}.s4-b.b4{animation-delay:1.05s}
+            @keyframes s4{0%{opacity:0;transform:translateY(6px)}14%,86%{opacity:1;transform:none}100%{opacity:0}}
+          </style>
+          <rect x="28" y="46" width="250" height="190" rx="12" fill="#10171f" stroke="#2a3848"/>
+          <rect x="28" y="46" width="250" height="26" rx="12" fill="#151e28"/>
+          <circle cx="44" cy="59" r="4" fill="#2a3848"/><circle cx="56" cy="59" r="4" fill="#2a3848"/>
+          <g class="s4-b"><rect x="46" y="88" width="150" height="14" rx="5" fill="#35c3a1"/><rect x="46" y="110" width="200" height="8" rx="4" fill="#2a3848"/></g>
+          <g class="s4-b b2"><rect x="46" y="132" width="78" height="22" rx="11" fill="rgba(53,195,161,.18)" stroke="#35c3a1"/></g>
+          <g class="s4-b b3"><rect x="46" y="170" width="66" height="46" rx="8" fill="#151e28"/><rect x="120" y="170" width="66" height="46" rx="8" fill="#151e28"/><rect x="194" y="170" width="66" height="46" rx="8" fill="#151e28"/></g>
+          <rect x="292" y="90" width="84" height="164" rx="14" fill="#0b1016" stroke="#2a3848" stroke-width="2"/>
+          <rect x="320" y="98" width="28" height="4" rx="2" fill="#2a3848"/>
+          <g class="s4-b b4"><rect x="302" y="114" width="58" height="9" rx="4" fill="#35c3a1"/><rect x="302" y="130" width="64" height="6" rx="3" fill="#2a3848"/>
+            <rect x="302" y="146" width="44" height="16" rx="8" fill="rgba(53,195,161,.18)" stroke="#35c3a1"/>
+            <rect x="302" y="172" width="64" height="30" rx="6" fill="#151e28"/><rect x="302" y="208" width="64" height="30" rx="6" fill="#151e28"/></g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="panel" role="tabpanel" tabindex="0" id="s-seo" aria-labelledby="t3">
+      <div>
         <h3>Aparecer en Google</h3>
-        <p>Que tu web se pueda leer, que cada página tenga un propósito claro y que aparezcas en las búsquedas que hace tu cliente antes de comprar.</p>
-        <a class="mas" href="seo-para-negocios.html">Ver en detalle →</a>
+        <p>Que tu web se pueda leer, que cada página tenga un propósito claro y que aparezcas en lo que busca tu cliente antes de comprar.</p>
+        <ul class="puntos">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Aparecer</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Que te elijan al verte</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Saber si funciona</li>
+        </ul>
+        <a class="mas" href="seo-para-negocios.html">Ver en detalle <span aria-hidden="true">→</span></a>
       </div>
+      <div class="escena" aria-hidden="true">
+        <svg viewBox="0 0 400 300">
+          <style>
+            .s3-sube{animation:s3 4s cubic-bezier(.3,.7,.3,1) infinite}
+            @keyframes s3{0%,15%{transform:translateY(116px)}55%,100%{transform:translateY(0)}}
+          </style>
+          <rect x="40" y="40" width="320" height="36" rx="18" fill="#151e28" stroke="#2a3848"/>
+          <circle cx="64" cy="58" r="7" fill="none" stroke="#7d8a98" stroke-width="2"/><path d="m69 63 5 5" stroke="#7d8a98" stroke-width="2"/>
+          <rect x="84" y="53" width="130" height="10" rx="5" fill="#2a3848"/>
+          <g fill="#151e28" stroke="#1f2b38"><rect x="40" y="146" width="320" height="44" rx="10"/><rect x="40" y="204" width="320" height="44" rx="10"/></g>
+          <g class="s3-sube"><rect x="40" y="88" width="320" height="44" rx="10" fill="#10171f" stroke="#35c3a1"/>
+            <rect x="56" y="100" width="150" height="8" rx="4" fill="#35c3a1"/><rect x="56" y="115" width="220" height="7" rx="3.5" fill="#2a3848"/></g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="panel" role="tabpanel" tabindex="0" id="s-ficha" aria-labelledby="t5">
+      <div>
+        <h3>Completar tu ficha de Google</h3>
+        <p>Tu negocio completo en Google Maps, con reseñas de clientes reales y todas juntas en un sitio para que las contestes rápido.</p>
+        <ul class="puntos">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Ficha reclamada y completa</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Reseñas por QR o por WhatsApp tras la cita</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Tus reseñas, juntas en un sitio</li>
+        </ul>
+        <a class="mas" href="ficha-de-google.html">Ver en detalle <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="escena" aria-hidden="true">
+        <svg viewBox="0 0 400 300">
+          <style>
+            .s5-c{opacity:0;animation:s5 4.6s ease-out infinite}
+            .s5-c.c2{animation-delay:.45s}.s5-c.c3{animation-delay:.9s}.s5-c.c4{animation-delay:1.35s}.s5-c.c5{animation-delay:1.9s}
+            @keyframes s5{0%{opacity:0;transform:translateX(-6px)}12%,86%{opacity:1;transform:none}100%{opacity:0}}
+          </style>
+          <rect x="40" y="34" width="210" height="232" rx="14" fill="#10171f" stroke="#2a3848"/>
+          <path d="M70 70s-12-10.6-12-19.7a12 12 0 0 1 24 0C82 59.4 70 70 70 70Z" fill="none" stroke="#35c3a1" stroke-width="2.4"/><circle cx="70" cy="50" r="4" fill="#35c3a1"/>
+          <rect x="94" y="44" width="110" height="10" rx="5" fill="#e7edf3" opacity=".85"/><rect x="94" y="60" width="70" height="7" rx="3.5" fill="#2a3848"/>
+          <g font-family="ui-monospace,monospace" font-size="12" fill="#a3afbc">
+            <g class="s5-c"><text x="60" y="108">horario</text><path d="m222 102 4 4 7-8" fill="none" stroke="#35c3a1" stroke-width="2"/></g>
+            <g class="s5-c c2"><text x="60" y="138">servicios</text><path d="m222 132 4 4 7-8" fill="none" stroke="#35c3a1" stroke-width="2"/></g>
+            <g class="s5-c c3"><text x="60" y="168">fotos</text><path d="m222 162 4 4 7-8" fill="none" stroke="#35c3a1" stroke-width="2"/></g>
+            <g class="s5-c c4"><text x="60" y="198">web y WhatsApp</text><path d="m222 192 4 4 7-8" fill="none" stroke="#35c3a1" stroke-width="2"/></g>
+          </g>
+          <g class="s5-c c5"><rect x="214" y="206" width="150" height="56" rx="14" fill="#151e28" stroke="#e3a664"/>
+            <text x="230" y="228" font-family="ui-monospace,monospace" font-size="11" fill="#e3a664">reseña nueva</text>
+            <rect x="230" y="238" width="118" height="7" rx="3.5" fill="#2a3848"/></g>
+          <g transform="translate(286 52)"><rect width="78" height="78" rx="10" fill="#151e28" stroke="#2a3848"/>
+            <g fill="#a3afbc"><rect x="10" y="10" width="18" height="18" rx="2"/><rect x="50" y="10" width="18" height="18" rx="2"/><rect x="10" y="50" width="18" height="18" rx="2"/>
+            <rect x="36" y="36" width="7" height="7"/><rect x="50" y="40" width="7" height="7"/><rect x="61" y="52" width="7" height="7"/><rect x="40" y="58" width="7" height="7"/><rect x="36" y="14" width="7" height="7"/></g>
+            <g fill="#151e28"><rect x="14" y="14" width="10" height="10"/><rect x="54" y="14" width="10" height="10"/><rect x="14" y="54" width="10" height="10"/></g></g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="conecta rev">
+      <h3>Se combinan y se comunican entre ellos</h3>
+      <p>Cada servicio recoge lo que deja el anterior. Por ejemplo:</p>
+      <ol class="cadena" role="list">
+        <li><span class="nodo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span>
+          <div><em>SEO · Ficha de Google</em><b>Un cliente te encuentra en Google</b></div><i class="hilo" aria-hidden="true"></i></li>
+        <li><span class="nodo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8.5M20 4v4.5h-4.5M20 12a8 8 0 0 1-13.7 5.7L4 15.5M4 20v-4.5h4.5"/></svg></span>
+          <div><em>Web · Automatización</em><b>Reserva desde tu web y queda apuntada sola</b></div><i class="hilo" aria-hidden="true"></i></li>
+        <li><span class="nodo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l2.1-5.7A8.4 8.4 0 1 1 21 11.5Z"/></svg></span>
+          <div><em>WhatsApp Business</em><b>Su contacto queda creado y en tu hoja de clientes</b></div></li>
+      </ol>
     </div>
   </div>
 </section>
 
 <section>
   <div class="env">
+    <span class="etiqueta ambar">Cómo trabajo</span>
+    <h2>No te cambio la forma de trabajar</h2>
+    <p class="grande estrecho">No llego con un método cerrado. Primero me cuentas cómo trabajas hoy y después automatizo ese proceso tocándolo lo menos posible.</p>
+    <div class="rejilla tres">
+      <div class="tarjeta rev">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-4-4 8-8-1.3-1.3a4 4 0 0 0-5-5Z"/><path d="m3 21 6-6"/></svg></div>
+        <h3>Tus herramientas</h3>
+        <p>Hoja de cálculo, programa de gestión o cuaderno. Cambiar de herramienta cuesta dinero y obliga a reaprender, y casi nunca hace falta.</p>
+      </div>
+      <div class="tarjeta rev d1">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11"/><path d="M4 6h.01M4 12h.01M4 18h.01" stroke-width="2.6"/></svg></div>
+        <h3>Tu orden</h3>
+        <p>Si primero apuntas y luego confirmas, el sistema lo hace igual y en ese orden.</p>
+      </div>
+      <div class="tarjeta rev d2">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 7h14M5 7l-3 7a4 4 0 0 0 6 0Z M19 7l-3 7a4 4 0 0 0 6 0Z"/></svg></div>
+        <h3>Decides tú</h3>
+        <p>Si hay un paso que impide automatizar el resto, te explico qué ganas y qué pierdes al cambiarlo. No lo cambio por mi cuenta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="fondo-capa" id="caso">
+  <div class="env">
     <span class="etiqueta ambar">Caso real</span>
     <h2>Free Tours Malta</h2>
-    <p class="grande estrecho">Cada reserva significaba abrir el correo, copiar los datos a una hoja, buscar el teléfono en la web de la agencia, crear el contacto y redactar la confirmación. Todos los días, una por una.</p>
-    <div class="dato rev">
-      <span class="cifra">Un mínimo de dos horas al día</span>
-      <p>Es lo que su responsable calcula que le ahorra el sistema desde que está en funcionamiento.</p>
-      <p class="fuente">Estimación del propio cliente, no una medición realizada por mí. En producción y operando a diario desde julio de 2026.</p>
-    </div>
     <blockquote class="rev">
       «Inmejorable experiencia con Alex. Muy profesional y con un compromiso con el que nos ha ayudado a reducir en gran medida nuestro flujo de trabajo. Un gran talento al que volveremos a recurrir y que recomendamos sin duda alguna.»
-      <footer>Jorge Vicioso, de <a href="https://quehacerenmalta.com" target="_blank" rel="noopener">Qué hacer en Malta</a></footer>
+      <footer>Responsable de <a href="https://quehacerenmalta.com" target="_blank" rel="noopener">Qué hacer en Malta</a></footer>
     </blockquote>
     <p style="margin-top:26px"><a class="btn hueco" href="caso-free-tours-malta.html">Leer el caso completo</a></p>
   </div>
 </section>
 
-<section class="arena">
+<section id="problemas">
   <div class="env">
-    <span class="etiqueta ambar">En desarrollo</span>
-    <h2>En qué estoy trabajando</h2>
-    <p class="grande estrecho">Herramientas que construyo para mi propio uso. Cuando estén terminadas y probadas pasarán a ser un servicio. Mientras tanto están aquí, y no las vendo.</p>
-    <div class="rejilla dos">
-      <div class="tarjeta rev">
-        <h3>Aplicación de inventario</h3>
-        <p>Empezó como una herramienta para organizar mi casa: qué hay, qué falta y qué hay que reponer. La estoy desarrollando con la vista puesta en que sirva igual para el almacén de un negocio pequeño.</p>
-      </div>
-      <div class="tarjeta rev">
-        <h3>Mi sistema de trabajo</h3>
-        <p>Un sistema que documenta y reutiliza lo aprendido en cada proyecto. Es la razón por la que el segundo cliente recibe resuelto lo que costó tiempo con el primero.</p>
-      </div>
-    </div>
-  </div>
-</section>
-<section class="cta" id="contacto">
-  <div class="env">
-    <h2>Explícame el proceso que quieres dejar de hacer a mano</h2>
-    <p class="grande estrecho">No necesitas saber si se puede automatizar ni cómo se hace. Descríbeme la tarea con tus palabras y te digo si tiene solución, cuánto llevaría y qué coste tendría. Si considero que no compensa, también te lo diré.</p>
-    <div class="vias">
-      <a class="btn" href="mailto:alex.automatizacions@gmail.com">Escribir un correo</a>
+    <div class="plegable">
+      <div class="pleg-cab"><span class="etiqueta">Problemas frecuentes</span><h2 id="t-problemas">¿Te pasa esto?</h2></div>
+      <details>
+        <summary aria-describedby="t-problemas"><span class="abre"><span class="ver">Ver los problemas</span><span class="cerrar">Ocultar</span> <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+        <div class="dentro-pleg">
+          <div class="problemas">
+            <div class="problema rev"><q>No me encuentran en Google</q><div class="va"><a href="#s-seo">SEO <span aria-hidden="true">→</span></a><a href="ficha-de-google.html">Ficha de Google <span aria-hidden="true">→</span></a></div></div>
+            <div class="problema rev d1"><q>Tengo pocas reseñas, o son de hace años</q><div class="va"><a href="ficha-de-google.html">Ficha de Google <span aria-hidden="true">→</span></a></div></div>
+            <div class="problema rev d2"><q>Pierdo la mañana contestando WhatsApp y apuntando citas</q><div class="va"><a href="#s-whatsapp">WhatsApp Business <span aria-hidden="true">→</span></a><a href="#s-automatizacion">Automatización <span aria-hidden="true">→</span></a></div></div>
+            <div class="problema rev"><q>Paso a mano cada reserva o pedido que me llega</q><div class="va"><a href="#s-automatizacion">Automatización <span aria-hidden="true">→</span></a><a href="caso-free-tours-malta.html">Ver el caso real <span aria-hidden="true">→</span></a></div></div>
+            <div class="problema rev d1"><q>Mi web es vieja o no se ve bien en el móvil</q><div class="va"><a href="#s-webs">Webs <span aria-hidden="true">→</span></a></div></div>
+            <div class="problema rev d2"><q>Me llaman solo para preguntar el horario</q><div class="va"><a href="ficha-de-google.html">Ficha de Google <span aria-hidden="true">→</span></a><a href="#s-whatsapp">WhatsApp Business <span aria-hidden="true">→</span></a></div></div>
+          </div>
+        </div>
+      </details>
     </div>
   </div>
 </section>
 
+<section id="en-desarrollo">
+  <div class="env">
+    <span class="etiqueta ambar">En desarrollo</span>
+    <h2>En qué estoy trabajando</h2>
+    <div class="rejilla dos">
+      <div class="tarjeta rev">
+        <h3>Aplicación de inventario</h3>
+        <p>Lleva el stock de un negocio: qué hay, qué falta y qué hay que reponer.</p>
+      </div>
+      <div class="tarjeta rev d1">
+        <h3>Gestión de clientes (CRM)</h3>
+        <p>Cada cliente en una ficha: quién es y qué falta por hacer con él.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contacto">
+  <div class="env">
+    <span class="etiqueta">Contacto</span>
+    <h2>Explícame el proceso que quieres dejar de hacer a mano</h2>
+    <p class="grande estrecho">No necesitas saber si se puede automatizar ni cómo se hace.</p>
+    <ol class="como">
+      <li class="rev"><b>Me lo cuentas</b> con tus palabras, tal como lo haces hoy.</li>
+      <li class="rev d1"><b>Te digo si tiene solución</b>, cuánto llevaría y qué coste tendría.</li>
+      <li class="rev d2"><b>Si no compensa</b>, también te lo digo.</li>
+    </ol>
+    <div class="acciones">
+      <!-- 🔴 NÚMERO DE WHATSAPP DE RELLENO (FALTA-NUMERO): poner el de Alex -->
+      <a class="btn wa" href="https://wa.me/FALTA-NUMERO?text=Hola%2C%20vengo%20de%20tu%20web" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.3 14.8L2.4 21.6l4.7-1.2A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.7-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.1 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 5 5 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.2-.2-.5-.3Z"/></svg>Escríbeme por WhatsApp</a>
+      <a class="btn hueco" href="mailto:alex.automatizacions@gmail.com">Escribir un correo</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
 <footer class="pie">
   <div class="env">
     <span>
-      <a href="index.html">Inicio</a>
+      <a href="#">Inicio</a>
       <a href="automatizar-reservas-y-pedidos.html">Automatización</a>
       <a href="whatsapp-business.html">WhatsApp Business</a>
+      <a href="webs.html">Webs</a>
       <a href="seo-para-negocios.html">SEO</a>
+      <a href="ficha-de-google.html">Ficha de Google</a>
       <a href="caso-free-tours-malta.html">Caso real</a>
     </span>
     <span><strong>Cero a Mano</strong> · Alejandro de la Rosa · Automatización de procesos · España</span>
   </div>
 </footer>
+<!-- 🔴 WHATSAPP SIN NÚMERO (FALTA-NUMERO): poner el de Alex -->
+<a class="wa-flota" href="https://wa.me/FALTA-NUMERO?text=Hola%2C%20vengo%20de%20tu%20web" target="_blank" rel="noopener" aria-label="Escríbeme por WhatsApp (se abre en otra pestaña)"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.3 14.8L2.4 21.6l4.7-1.2A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.7-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.1 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 5 5 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.2-.2-.5-.3Z"/></svg></a>
+<div class="borrador">Versión en revisión · los textos y el diseño pueden cambiar</div>
+
 <script>
-// Aparicion suave de los bloques al entrar en pantalla.
+var quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Ondas de la cabecera: líneas que fluyen como un mapa de relieve, tres de ellas en ámbar.
+(function () {
+  var lienzo = document.getElementById('lluvia');
+  if (!lienzo || !lienzo.getContext) return;
+  var ctx = lienzo.getContext('2d');
+  var W = 0, H = 0, dpr = 1, t0 = performance.now(), ultimo = 0, anim = null, visible = true;
+  var COLOR = { 3: [240, 194, 122, .68], 8: [227, 166, 100, .72], 12: [214, 140, 82, .62] }; // las de color
+  function preparar() {
+    var w = lienzo.clientWidth, h = lienzo.clientHeight;
+    if (w === W && h === H) return false;
+    W = w; H = h; dpr = 1;                          // líneas suaves: no hace falta más densidad y ahorra mucho
+    lienzo.width = W; lienzo.height = H; ctx.setTransform(1, 0, 0, 1, 0, 0);
+    return true;
+  }
+  function pintar(t) {
+    ctx.clearRect(0, 0, W, H);
+    var n = 14;
+    for (var k = 0; k < n; k++) {
+      var base = H * (.18 + k * .055), amp = 18 + k * 2.2, f = .0032 - k * .00009, fase = t * .00025 * (1 + k * .06) + k * .7;
+      ctx.beginPath();
+      for (var x = 0; x <= W + 10; x += 10) {
+        var y = base + Math.sin(x * f + fase) * amp + Math.sin(x * f * 2.3 - fase * 1.4) * amp * .35;
+        if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      var c = COLOR[k];
+      ctx.strokeStyle = c ? 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + (W <= 700 ? c[3] * .62 : c[3]) + ')' : 'rgba(53,195,161,' + (.2 + (k % 3) * .08) + ')';
+      ctx.lineWidth = c ? 1.8 : 1.2; ctx.stroke();
+    }
+  }
+  function bucle(t) {
+    anim = null; if (!visible || document.hidden) return;
+    if (ultimo && t - ultimo < 30) { anim = requestAnimationFrame(bucle); return; }
+    ultimo = t; pintar(t - t0); anim = requestAnimationFrame(bucle);
+  }
+  function arrancar() { if (!anim && !quieto) { ultimo = 0; anim = requestAnimationFrame(bucle); } }
+  preparar();
+  pintar(quieto ? 20000 : 0);
+  var vigia = function () { if (preparar()) pintar(quieto ? 20000 : performance.now() - t0); };
+  if ('ResizeObserver' in window) new ResizeObserver(vigia).observe(lienzo); else window.addEventListener('resize', vigia);
+  if (quieto) return;
+  arrancar();
+  document.addEventListener('visibilitychange', arrancar);
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { visible = e[0].isIntersecting; arrancar(); }).observe(lienzo);
+})();
+
+// Aparición suave de los bloques al entrar en pantalla.
 (function () {
   var bloques = document.querySelectorAll('.rev');
-  if (!('IntersectionObserver' in window)) {
-    for (var i = 0; i < bloques.length; i++) bloques[i].classList.add('dentro');
+  if (quieto || !('IntersectionObserver' in window)) {
+    bloques.forEach(function (b) { b.classList.add('dentro'); });
     return;
   }
   var obs = new IntersectionObserver(function (entradas) {
@@ -286,34 +849,130 @@
       if (e.isIntersecting) { e.target.classList.add('dentro'); obs.unobserve(e.target); }
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  bloques.forEach(function (b, i) {
-    if (i % 3 === 1) b.classList.add('d1');
-    if (i % 3 === 2) b.classList.add('d2');
-    obs.observe(b);
+  bloques.forEach(function (b) { obs.observe(b); });
+})();
+
+// Cómo funciona: los pasos se encienden a la vez que el registro va escribiendo.
+(function () {
+  var pasos = document.querySelectorAll('.paso');
+  var lineas = document.querySelectorAll('.registro li');
+  var zona = document.getElementById('como');
+  if (quieto) { lineas.forEach(function (l) { l.classList.add('ve'); }); pasos[2].classList.add('activo'); return; }
+  var i = 0, reloj = null;
+  function tic() {
+    if (i === 0) { lineas.forEach(function (l) { l.classList.remove('ve'); }); }
+    if (i < lineas.length) {
+      var l = lineas[i]; l.classList.add('ve');
+      var p = +l.getAttribute('data-p');
+      pasos.forEach(function (x, k) { x.classList.toggle('activo', k === p); });
+      i++; reloj = setTimeout(tic, 850);
+    } else { i = 0; reloj = setTimeout(tic, 2600); }
+  }
+  function parar() { clearTimeout(reloj); reloj = null; }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (e) {
+      if (e[0].isIntersecting) { if (!reloj) tic(); } else parar();
+    }, { threshold: 0.25 }).observe(zona);
+  } else tic();
+})();
+
+// Pestañas de servicios, también con el teclado (flechas, Inicio y Fin).
+(function () {
+  var lista = document.querySelector('[role="tablist"]');
+  var tabs = Array.prototype.slice.call(lista.querySelectorAll('[role="tab"]'));
+  function elegir(t, foco) {
+    tabs.forEach(function (x) {
+      var si = x === t;
+      x.setAttribute('aria-selected', si ? 'true' : 'false');
+      x.tabIndex = si ? 0 : -1;
+      var panel = document.getElementById(x.getAttribute('aria-controls'));
+      panel.hidden = !si;
+      if (si) { panel.classList.remove('entra'); void panel.offsetWidth; panel.classList.add('entra'); }
+    });
+    if (foco) t.focus();
+  }
+  tabs.slice(1).forEach(function (x) { document.getElementById(x.getAttribute('aria-controls')).hidden = true; });
+  // Enlaces tipo #s-webs: abren su pestaña y bajan a servicios.
+  function porEnlace(hash, bajar) {
+    var m = /^#s-(.+)$/.exec(hash || '');
+    if (!m) return false;
+    var t = lista.querySelector('[data-slug="' + m[1] + '"]');
+    if (!t) return false;
+    elegir(t);
+    if (bajar) document.getElementById('servicios').scrollIntoView({ behavior: quieto ? 'auto' : 'smooth' });
+    return true;
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="#s-"]');
+    if (a && porEnlace(a.getAttribute('href'), true)) { e.preventDefault(); history.replaceState(null, '', a.getAttribute('href')); }
+  });
+  if (porEnlace(location.hash, false)) setTimeout(function () { document.getElementById('servicios').scrollIntoView(); }, 60);
+  window.addEventListener('hashchange', function () { porEnlace(location.hash, true); });
+  tabs.forEach(function (t, k) {
+    t.addEventListener('click', function () { elegir(t); });
+    t.addEventListener('keydown', function (e) {
+      var n = null;
+      if (e.key === 'ArrowRight') n = tabs[(k + 1) % tabs.length];
+      if (e.key === 'ArrowLeft') n = tabs[(k - 1 + tabs.length) % tabs.length];
+      if (e.key === 'Home') n = tabs[0];
+      if (e.key === 'End') n = tabs[tabs.length - 1];
+      if (n) { e.preventDefault(); elegir(n, true); }
+    });
   });
 })();
-</script>
-<div class="borrador">Versión en revisión &middot; los textos y el diseño pueden cambiar</div>
-<script>
-// Menu del movil: abre y cierra la lista de enlaces.
+
+
+// Menú «Servicios»: se abre con clic o teclado (y al pasar el ratón en ordenador).
+(function () {
+  var cajas = document.querySelectorAll('.desplegable');
+  cajas.forEach(function (d) {
+    var b = d.querySelector('.abre-sub');
+    function poner(abrir) { d.classList.toggle('abierto', abrir); b.setAttribute('aria-expanded', abrir ? 'true' : 'false'); }
+    b.addEventListener('click', function (e) { e.stopPropagation(); poner(!d.classList.contains('abierto')); });
+    d.addEventListener('keydown', function (e) { if (e.key === 'Escape' && d.classList.contains('abierto')) { poner(false); b.focus(); e.stopPropagation(); } });
+    d.addEventListener('focusout', function (e) { if (!d.contains(e.relatedTarget) && window.innerWidth > 860) poner(false); });
+    document.addEventListener('click', function (e) { if (!d.contains(e.target) || (e.target.closest && e.target.closest('.sub a'))) poner(false); });
+    d.addEventListener('mouseenter', function () { if (window.matchMedia('(hover:hover) and (min-width:861px)').matches) b.setAttribute('aria-expanded', 'true'); });
+    d.addEventListener('mouseleave', function () { if (window.matchMedia('(hover:hover) and (min-width:861px)').matches && !d.classList.contains('abierto')) b.setAttribute('aria-expanded', 'false'); });
+  });
+})();
+
+// Botón flotante de WhatsApp: se esconde mientras se ve la sección de contacto.
+(function () {
+  var b = document.querySelector('.wa-flota'), c = document.getElementById('contacto');
+  if (!b || !c || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function (e) { b.classList.toggle('oculto', e[0].isIntersecting); }, { threshold: 0.2 }).observe(c);
+})();
+
+// Menú del móvil: abre y cierra la lista de enlaces.
 (function () {
   var boton = document.querySelector('.abrir-menu');
   var menu = document.getElementById('menu');
   if (!boton || !menu) return;
   function alternar(abrir) {
-    var estaAbierto = abrir === undefined ? !menu.classList.contains('abierto') : abrir;
-    menu.classList.toggle('abierto', estaAbierto);
-    boton.classList.toggle('activo', estaAbierto);
-    boton.setAttribute('aria-expanded', estaAbierto ? 'true' : 'false');
-    boton.setAttribute('aria-label', estaAbierto ? 'Cerrar menú' : 'Abrir menú');
+    var abierto = abrir === undefined ? !menu.classList.contains('abierto') : abrir;
+    menu.classList.toggle('abierto', abierto);
+    boton.classList.toggle('activo', abierto);
+    boton.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+    boton.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
   }
   boton.addEventListener('click', function () { alternar(); });
-  menu.addEventListener('click', function (e) {
-    if (e.target.tagName === 'A') alternar(false);
-  });
+  menu.addEventListener('focusout', function (e) { if (menu.classList.contains('abierto') && !boton.parentNode.contains(e.relatedTarget)) alternar(false); });
+  menu.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('a')) alternar(false); });
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') alternar(false);
+    if (e.key !== 'Escape' || !menu.classList.contains('abierto')) return;
+    var dentro = menu.contains(document.activeElement);
+    alternar(false);
+    if (dentro) boton.focus();
   });
+})();
+
+
+// Las líneas de «se combinan» solo se animan cuando se ven.
+(function () {
+  if (!('IntersectionObserver' in window)) { document.querySelectorAll('.cadena').forEach(function (c) { c.classList.add('en-vista'); }); return; }
+  var o = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('en-vista', e.isIntersecting); }); });
+  document.querySelectorAll('.cadena').forEach(function (c) { o.observe(c); });
 })();
 </script>
 </body>

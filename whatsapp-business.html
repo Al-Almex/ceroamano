@@ -3,132 +3,700 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Configurar WhatsApp Business para tu negocio | Cero a Mano</title>
-<meta name="description" content="Configuro WhatsApp Business con criterio: etiquetas por tipo y estado, respuestas rápidas y una hoja de seguimiento para saber por quién vas.">
+<title>WhatsApp Business para tu negocio · Cero a Mano</title>
+<meta name="description" content="Configuro WhatsApp Business para tu negocio: etiquetas por tipo y estado, respuestas rápidas, perfil completo y una hoja de seguimiento.">
 <link rel="canonical" href="https://ceroamano.com/whatsapp-business.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Configurar WhatsApp Business para tu negocio | Cero a Mano">
-<meta property="og:description" content="Configuro WhatsApp Business con criterio: etiquetas por tipo y estado, respuestas rápidas y una hoja de seguimiento para saber por quién vas.">
+<meta property="og:title" content="WhatsApp Business para tu negocio · Cero a Mano">
+<meta property="og:description" content="Configuro WhatsApp Business para tu negocio: etiquetas por tipo y estado, respuestas rápidas, perfil completo y una hoja de seguimiento.">
 <meta property="og:url" content="https://ceroamano.com/whatsapp-business.html">
 <meta property="og:locale" content="es_ES">
-<!-- =========================================================================
-     🔴 QUITAR ESTA ETIQUETA ANTES DE PUBLICAR DE VERDAD
-     Mientras la web está en revisión, esto le dice a Google que NO la indexe.
-     Si se queda puesta el día del lanzamiento, la web NO APARECERÁ EN GOOGLE NUNCA.
-     ========================================================================== -->
+<meta name="theme-color" content="#0b1016">
+<script>document.documentElement.classList.add('js')</script>
+<!-- 🔴 QUITAR ESTA ETIQUETA ANTES DE PUBLICAR DE VERDAD -->
 <meta name="robots" content="noindex, nofollow">
-<link rel="stylesheet" href="estilos.css?v=7">
+<!-- WEB v5 (03/10/2026): fondo A (ondas arriba), aprobada por Alex. Estilos y código dentro de cada página: no usa estilos.css. -->
+<style>
+:root{
+  --fondo:#0b1016; --capa:#10171f; --capa2:#151e28; --linea:#1f2b38; --linea2:#2a3848;
+  --texto:#e7edf3; --suave:#a3afbc; --tenue:#7d8a98;
+  --verde:#35c3a1; --verde-osc:#0d5f52; --verde-vidrio:rgba(53,195,161,.10);
+  --ambar:#e3a664; --ambar-vidrio:rgba(227,166,100,.10);
+  --radio:16px; --ancho:1120px;
+  --mono:ui-monospace,"SF Mono","Cascadia Mono","Segoe UI Mono",Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--fondo)}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  color:var(--texto);background:var(--fondo);line-height:1.6;-webkit-font-smoothing:antialiased}
+.env{max-width:var(--ancho);margin:0 auto;padding:0 24px}
+section{padding:96px 0;position:relative}
+h1,h2,h3{line-height:1.14;letter-spacing:-.025em;font-weight:700;color:var(--texto)}
+h1{font-size:clamp(2.1rem,5.2vw,3.7rem);text-wrap:balance}
+h2{font-size:clamp(1.6rem,3.4vw,2.35rem);margin-bottom:14px;text-wrap:balance}
+h3{font-size:1.08rem;margin-bottom:6px}
+p{color:var(--suave)}
+.grande{font-size:clamp(1.03rem,1.8vw,1.2rem)}
+.estrecho{max-width:58ch}
+a{color:var(--verde)}
+.resalte{color:var(--verde)}
+:focus-visible{outline:2px solid var(--verde);outline-offset:3px;border-radius:6px}
+
+/* etiqueta de sección en monoespaciada */
+.etiqueta{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.76rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--verde);margin-bottom:16px}
+.etiqueta::before{content:"";width:18px;height:1px;background:currentColor;opacity:.7}
+.etiqueta.ambar{color:var(--ambar)}
+
+/* ── menú ─────────────────────────────────────────────────── */
+nav{position:sticky;top:0;z-index:30;background:rgba(11,16,22,.78);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--linea)}
+nav .env{display:flex;align-items:center;justify-content:space-between;height:68px;gap:18px}
+.marca{font-weight:700;letter-spacing:-.02em;text-decoration:none;color:var(--texto);font-size:1.04rem;line-height:1.15}
+.marca span{color:var(--verde)}
+.marca em{display:block;font-style:normal;font-weight:500;font-size:.73rem;color:var(--tenue);margin-top:-1px}
+.enlaces{display:flex;gap:24px;align-items:center}
+.enlaces a{color:var(--suave);text-decoration:none;font-size:.93rem;transition:color .2s}
+.enlaces a:hover{color:var(--texto)}
+.enlaces a[aria-current]{color:var(--texto);font-weight:600}
+.enlaces a:not(.btn){position:relative;padding-bottom:3px}
+.enlaces a:not(.btn)::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--verde);transition:width .22s}
+.enlaces a:not(.btn):hover::after,.enlaces a[aria-current]:not(.btn)::after{width:100%}
+.enlaces a[aria-current]:not(.btn)::after{background:var(--tenue)}
+
+/* ── botones ──────────────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--verde);color:#06201a!important;
+  text-decoration:none;padding:14px 26px;border-radius:999px;font-weight:650;font-size:.98rem;
+  transition:transform .15s,box-shadow .2s;box-shadow:0 0 0 0 rgba(53,195,161,0)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(53,195,161,.28)}
+.btn.chico{padding:9px 18px;font-size:.88rem}
+.btn.hueco{background:transparent;color:var(--texto)!important;border:1px solid var(--linea2)}
+.btn.hueco:hover{border-color:var(--verde);box-shadow:none}
+.acciones{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+
+/* ── portada con lluvia de símbolos ───────────────────────── */
+.hero{position:relative;overflow:hidden;padding:110px 0 84px;border-bottom:1px solid var(--linea)}
+#lluvia{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(90deg,var(--fondo) 0%,rgba(11,16,22,.88) 38%,rgba(11,16,22,.2) 72%,rgba(11,16,22,.4) 100%),
+             linear-gradient(0deg,var(--fondo) 0%,transparent 30%)}
+.hero .env{position:relative;z-index:2}
+.hero h1{max-width:17ch;margin-top:4px}
+.hero .etiqueta{font-size:.9rem;letter-spacing:.08em;color:#6fe0c3;font-weight:600}
+.hero .grande{margin:22px 0 34px;max-width:52ch}
+.datos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin-top:62px;max-width:760px;
+  background:var(--linea);border:1px solid var(--linea);border-radius:var(--radio);overflow:hidden}
+.datos div{background:rgba(16,23,31,.86);padding:18px 20px;backdrop-filter:blur(4px)}
+.datos b{display:block;font-family:var(--mono);font-size:1.45rem;font-weight:600;color:var(--texto);letter-spacing:-.02em}
+.datos span{font-size:.84rem;color:var(--tenue);line-height:1.4;display:block;margin-top:4px}
+
+/* ── cómo funciona: flujo + consola ───────────────────────── */
+.flujo{display:grid;gap:22px;margin-top:44px}
+@media(min-width:900px){.flujo{grid-template-columns:1.05fr .95fr;align-items:stretch}}
+.pasos{display:flex;flex-direction:column;gap:12px;position:relative}
+.paso{display:flex;gap:16px;align-items:flex-start;padding:20px 22px;border:1px solid var(--linea);border-radius:var(--radio);
+  background:var(--capa);transition:border-color .4s,background .4s,transform .4s}
+.paso .ico{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
+  background:var(--capa2);border:1px solid var(--linea2);color:var(--suave);transition:all .4s}
+.paso p{font-size:.93rem;margin-top:2px}
+.paso.activo{border-color:rgba(53,195,161,.55);background:linear-gradient(90deg,rgba(53,195,161,.08),var(--capa) 70%)}
+.paso.activo .ico{color:var(--verde);border-color:rgba(53,195,161,.5);box-shadow:0 0 22px rgba(53,195,161,.18)}
+.salidas{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.salidas span{font-size:.8rem;color:var(--suave);border:1px solid var(--linea2);border-radius:999px;padding:4px 11px}
+.paso.activo .salidas span{border-color:rgba(53,195,161,.35);color:var(--texto)}
+
+.consola{border:1px solid var(--linea2);border-radius:var(--radio);background:#070b0f;overflow:hidden;
+  display:flex;flex-direction:column;min-height:300px;font-family:var(--mono);font-size:.84rem}
+.consola .barra{display:flex;align-items:center;gap:7px;padding:12px 16px;border-bottom:1px solid var(--linea);color:var(--tenue);font-size:.75rem}
+.consola .barra i{width:9px;height:9px;border-radius:50%;background:var(--linea2);display:block}
+.consola .barra em{font-style:normal;margin-left:8px}
+.consola .barra .vivo{margin-left:auto;color:var(--verde);display:flex;align-items:center;gap:6px}
+.consola .barra .vivo::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--verde);animation:latido 1.6s infinite}
+@keyframes latido{0%,100%{opacity:1}50%{opacity:.25}}
+.registro{list-style:none;padding:16px 18px;display:flex;flex-direction:column;gap:9px;flex:1}
+.registro li{display:flex;gap:10px;color:var(--suave);transform:translateY(6px);transition:opacity .35s,transform .35s}
+.js .registro li{opacity:0;transform:translateY(6px)}
+.js .registro li.ve{opacity:1;transform:none}
+.registro li .h{color:#7d8a98;flex:none}
+.registro li .ok{color:var(--verde)}
+.registro li .ent{color:var(--ambar)}
+.pie-fig{margin-top:16px;font-size:.86rem;color:var(--tenue)}
+
+/* ── servicios en pestañas ────────────────────────────────── */
+.fondo-capa{background:var(--capa);border-top:1px solid var(--linea);border-bottom:1px solid var(--linea)}
+.pestanas{display:flex;gap:6px;margin-top:38px;padding:6px;border:1px solid var(--linea);border-radius:999px;
+  background:var(--fondo);width:max-content;max-width:100%;overflow-x:auto;scrollbar-width:none}
+.pestanas::-webkit-scrollbar{display:none}
+.pestanas button{all:unset;cursor:pointer;display:flex;align-items:center;gap:8px;padding:11px 18px;border-radius:999px;
+  font-size:.93rem;font-weight:600;color:var(--suave);white-space:nowrap;transition:background .25s,color .25s}
+.pestanas button:hover{color:var(--texto)}
+.pestanas button[aria-selected="true"]{background:var(--capa2);color:var(--texto);box-shadow:inset 0 0 0 1px var(--linea2)}
+.pestanas button[aria-selected="true"] svg{color:var(--verde)}
+.pestanas button:focus-visible{outline:2px solid var(--verde);outline-offset:-2px}
+.panel{display:grid;gap:34px;margin-top:26px;padding:34px;border:1px solid var(--linea);border-radius:22px;background:var(--fondo)}
+@media(min-width:900px){.panel{grid-template-columns:1fr 1fr;align-items:center;padding:44px}}
+.panel[hidden]{display:none}
+.panel.entra{animation:entra .45s cubic-bezier(.2,.7,.3,1)}
+@keyframes entra{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.panel h3{font-size:1.45rem;margin-bottom:10px}
+.puntos{list-style:none;margin:22px 0 26px;display:flex;flex-direction:column;gap:12px}
+.puntos li{display:flex;gap:12px;align-items:center;color:var(--texto);font-size:.97rem}
+.puntos li svg{flex:none;color:var(--verde)}
+.mas{font-weight:600;text-decoration:none;display:inline-flex;gap:6px;align-items:center;padding:10px 0}
+.mas:hover{gap:10px}
+.mas{transition:gap .2s}
+.escena{border:1px solid var(--linea);border-radius:18px;background:var(--capa);aspect-ratio:4/3;position:relative;overflow:hidden}
+.escena svg{position:absolute;inset:0;width:100%;height:100%}
+
+
+/* ── las piezas se conectan ───────────────────────────────── */
+.conecta{margin-top:26px;padding:34px;border:1px solid var(--linea);border-radius:22px;background:var(--fondo)}
+.conecta h3{font-size:1.35rem;margin-bottom:8px}
+.cadena{list-style:none;display:grid;margin-top:30px}
+.cadena li{position:relative;display:grid;grid-template-columns:48px 1fr;gap:0 16px;padding-bottom:30px;align-content:start}
+.cadena li:last-child{padding-bottom:0}
+.nodo{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:var(--capa2);
+  border:1px solid rgba(53,195,161,.4);color:var(--verde);box-shadow:0 0 22px rgba(53,195,161,.12);position:relative;z-index:1}
+.cadena em{display:inline-block;font-style:normal;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--verde);border:1px solid rgba(53,195,161,.3);border-radius:999px;padding:7px 10px;margin-bottom:8px;line-height:1;text-box:trim-both cap alphabetic}
+.cadena b{display:block;color:var(--texto);font-weight:600;font-size:1rem;line-height:1.35}
+.hilo{position:absolute;left:23px;top:52px;bottom:4px;width:2px;background:var(--linea2);overflow:hidden}
+.hilo::after{content:"";position:absolute;left:-2px;top:-35%;width:6px;height:35%;border-radius:3px;
+  background:linear-gradient(180deg,transparent,var(--verde));animation:viajeV 2.4s linear infinite}
+.cadena li:nth-child(2) .hilo::after{animation-delay:1.2s}
+@keyframes viajeV{to{top:100%}}
+@keyframes viajeH{to{left:100%}}
+@media(min-width:820px){
+  .cadena{grid-template-columns:repeat(3,1fr);gap:18px}
+  .cadena li{grid-template-columns:1fr;gap:14px;padding-bottom:0;padding-right:24px}
+  .hilo{left:60px;right:-6px;top:23px;bottom:auto;width:auto;height:2px}
+  .hilo::after{top:-2px;left:-35%;width:35%;height:6px;background:linear-gradient(90deg,transparent,var(--verde));animation-name:viajeH}
+}
+@media(max-width:560px){.conecta{padding:24px}}
+
+
+/* ── menú: «Servicios» desplegable ─────────────────────────── */
+.desplegable{position:relative}
+.abre-sub{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:6px;color:var(--suave);font-size:.93rem;padding-bottom:3px;transition:color .2s}
+.abre-sub:hover,.abre-sub.actual,.desplegable.abierto .abre-sub{color:var(--texto)}
+.abre-sub.actual{font-weight:600}
+.abre-sub svg{transition:transform .2s}
+.desplegable.abierto .abre-sub svg{transform:rotate(180deg)}
+.abre-sub:focus-visible{outline:2px solid var(--verde);outline-offset:4px;border-radius:6px}
+.sub{position:absolute;top:100%;left:-16px;padding-top:14px;display:none;z-index:40}
+.desplegable.abierto .sub{display:block}
+.sub .caja{min-width:250px;background:var(--capa);border:1px solid var(--linea2);border-radius:14px;padding:8px;
+  box-shadow:0 18px 40px rgba(0,0,0,.5);display:flex;flex-direction:column}
+.sub a,.enlaces .sub a:not(.btn){display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:9px;color:var(--suave);font-size:.93rem}
+.sub a svg{color:var(--tenue);flex:none}
+.sub a:hover{background:var(--capa2);color:var(--texto)}
+.sub a:hover svg,.sub a[aria-current] svg{color:var(--verde)}
+.sub a[aria-current]{color:var(--texto);font-weight:600;background:var(--capa2)}
+.enlaces .sub a:not(.btn)::after{display:none}
+@media(hover:hover) and (min-width:861px){.desplegable:hover .sub{display:block}.desplegable:hover .abre-sub svg{transform:rotate(180deg)}}
+
+/* ── ¿Te pasa esto? ───────────────────────────────────────── */
+.problemas{display:grid;gap:14px;margin-top:38px}
+@media(min-width:760px){.problemas{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1040px){.problemas{grid-template-columns:repeat(3,1fr)}}
+.problema{border:1px solid var(--linea);border-radius:var(--radio);background:var(--capa);padding:24px;display:flex;flex-direction:column;
+  justify-content:space-between;gap:18px;transition:border-color .2s,transform .2s cubic-bezier(.2,.7,.3,1)}
+.problema:hover{border-color:var(--linea2);transform:translateY(-3px)}
+.problema q{quotes:"«" "»";font-size:1.12rem;font-weight:600;color:var(--texto);line-height:1.35}
+.problema .va{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto}
+.problema .va a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:.86rem;font-weight:600;color:var(--verde);
+  border:1px solid rgba(53,195,161,.3);border-radius:999px;padding:9px 14px;transition:background .2s,border-color .2s}
+.problema .va a:hover{background:var(--verde-vidrio);border-color:var(--verde)}
+
+
+/* ── WhatsApp ─────────────────────────────────────────────── */
+.btn.wa{background:#25d366;color:#05241a!important}
+.btn.wa:hover{box-shadow:0 8px 28px rgba(37,211,102,.3)}
+.wa-flota{position:fixed;right:20px;bottom:54px;z-index:60;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;
+  background:#25d366;color:#05241a;box-shadow:0 10px 30px rgba(0,0,0,.45);transition:transform .2s,opacity .3s}
+.wa-flota svg{width:28px;height:28px}
+.wa-flota:hover{transform:scale(1.07)}
+.wa-flota:focus-visible{outline:3px solid #e7edf3;outline-offset:3px}
+.wa-flota.oculto{opacity:0;pointer-events:none;transform:scale(.8);visibility:hidden;transition:transform .2s,opacity .3s,visibility 0s .3s}
+@media(max-width:400px){.wa-flota{bottom:70px}body:has(.borrador){padding-bottom:60px}}
+
+/* ── ¿Te pasa esto?, plegable ─────────────────────────────── */
+.plegable{position:relative;border:1px solid var(--linea);border-radius:22px;background:var(--capa);transition:border-color .2s}
+.plegable:hover{border-color:var(--linea2)}
+.pleg-cab{padding:30px 34px}
+.pleg-cab .etiqueta{margin-bottom:10px}
+.pleg-cab h2{margin:0}
+.plegable summary{list-style:none;cursor:pointer;position:absolute;top:50px;right:34px;border-radius:999px}
+.plegable details[open] summary{top:50px}
+.plegable summary::-webkit-details-marker{display:none}
+.plegable .abre{display:inline-flex;align-items:center;gap:10px;font-size:.9rem;font-weight:600;color:var(--verde);
+  border:1px solid rgba(53,195,161,.35);border-radius:999px;padding:10px 16px;white-space:nowrap;transition:background .2s}
+.plegable summary:hover .abre{background:var(--verde-vidrio)}
+.plegable .abre svg{transition:transform .25s}
+.plegable details[open] .abre svg{transform:rotate(180deg)}
+.plegable .abre .cerrar{display:none}
+.plegable details[open] .abre .ver{display:none}
+.plegable details[open] .abre .cerrar{display:inline}
+.plegable summary:focus-visible{outline:2px solid var(--verde);outline-offset:3px}
+.plegable .dentro-pleg{padding:0 34px 34px}
+.plegable .problemas{margin-top:0}
+.plegable details[open] .dentro-pleg{animation:entra .45s cubic-bezier(.2,.7,.3,1)}
+@media(max-width:560px){.pleg-cab{padding:24px 24px 16px}.plegable summary{position:static;display:block;padding:0 24px 24px}.plegable .dentro-pleg{padding:0 24px 24px}}
+
+/* ── fondo de ondas: se apaga detrás del texto (máscara en CSS, no en cada fotograma) ── */
+@media(min-width:701px){#lluvia{-webkit-mask-image:linear-gradient(90deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,.4) 37%,#000 62%);mask-image:linear-gradient(90deg,rgba(0,0,0,.15) 0%,rgba(0,0,0,.4) 37%,#000 62%)}}
+
+/* ── cómo trabajo ─────────────────────────────────────────── */
+.rejilla{display:grid;gap:18px;margin-top:40px}
+@media(min-width:820px){.tres{grid-template-columns:repeat(3,1fr)}.dos{grid-template-columns:1fr 1fr}}
+.tarjeta{background:var(--capa);border:1px solid var(--linea);border-radius:var(--radio);padding:26px;
+  transition:transform .2s cubic-bezier(.2,.7,.3,1),border-color .2s}
+.tarjeta:hover{transform:translateY(-4px);border-color:var(--linea2)}
+.tarjeta .ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin-bottom:18px;
+  background:var(--verde-vidrio);color:var(--verde);border:1px solid rgba(53,195,161,.25)}
+.tarjeta p{font-size:.95rem}
+
+/* ── caso real ────────────────────────────────────────────── */
+.caso{display:grid;gap:22px;margin-top:40px}
+@media(min-width:900px){.caso{grid-template-columns:.9fr 1.1fr}}
+.cifra{border:1px solid var(--linea);border-radius:var(--radio);background:var(--capa);padding:30px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.anillo{position:relative;width:170px;height:170px;margin-bottom:8px}
+.anillo svg{width:100%;height:100%;transform:rotate(-90deg)}
+.anillo .pista{stroke:var(--linea2)}
+.anillo .arco{stroke:var(--ambar);stroke-linecap:round;stroke-dasharray:440.5;stroke-dashoffset:440;transition:stroke-dashoffset 1.8s cubic-bezier(.2,.7,.3,1)}
+.anillo.dentro .arco{stroke-dashoffset:0}
+.anillo b{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--mono);font-size:2.6rem;font-weight:600;letter-spacing:-.03em}
+.anillo b small{display:block;font-size:.85rem;color:var(--tenue);font-weight:500;text-align:center;letter-spacing:0;margin-top:-4px}
+.cifra .titular{font-size:1.2rem;font-weight:650;color:var(--texto)}
+.cifra .fuente{font-size:.82rem;color:var(--tenue)}
+.antes{border:1px solid var(--linea);border-radius:var(--radio);background:var(--capa);padding:28px}
+.antes h3{font-family:var(--mono);font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tenue);font-weight:500;margin-bottom:16px}
+.tachar{list-style:none;display:flex;flex-direction:column;gap:10px}
+.tachar li{display:flex;align-items:center;gap:12px;color:var(--suave);font-size:.96rem;position:relative}
+.tachar li i{flex:none;width:22px;height:22px;border-radius:6px;border:1px solid var(--linea2);display:grid;place-items:center;
+  font-style:normal;font-size:.7rem;font-family:var(--mono);color:var(--tenue);transition:all .35s}
+.tachar li span{text-decoration:line-through 1.5px transparent;transition:text-decoration-color .5s,color .5s}
+.tachar li.hecho span{color:var(--tenue)}
+.tachar li.hecho span{text-decoration-color:var(--ambar)}
+.tachar li.hecho i{background:var(--ambar-vidrio);border-color:rgba(227,166,100,.4);color:var(--ambar)}
+.ahora{margin-top:20px;padding-top:18px;border-top:1px dashed var(--linea2);display:flex;gap:12px;align-items:center;
+  color:var(--texto);font-weight:600;transition:all .5s}
+.js .ahora{opacity:0;transform:translateY(6px)}
+.js .ahora.ve{opacity:1;transform:none}
+.ahora svg{color:var(--verde);flex:none}
+blockquote{margin-top:22px;border:1px solid var(--linea);border-left:3px solid var(--verde);border-radius:var(--radio);
+  background:var(--capa);padding:26px 28px;font-size:1.04rem;color:var(--texto)}
+blockquote footer{margin-top:12px;font-size:.88rem;color:var(--tenue)}
+
+/* ── en desarrollo ────────────────────────────────────────── */
+.estado{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ambar);margin-bottom:12px}
+.estado::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--ambar);animation:latido 2s infinite}
+
+/* ── contacto ─────────────────────────────────────────────── */
+.cta{border-top:1px solid var(--linea);background:
+  radial-gradient(700px 320px at 85% 0%,rgba(53,195,161,.10),transparent 65%),var(--fondo)}
+.como{list-style:none;display:grid;gap:14px;margin:34px 0 34px;counter-reset:c}
+@media(min-width:820px){.como{grid-template-columns:repeat(3,1fr)}}
+.como li{counter-increment:c;border:1px solid var(--linea);border-radius:var(--radio);padding:20px 22px;background:var(--capa);color:var(--suave);font-size:.95rem}
+.como li::before{content:"0" counter(c);display:block;font-family:var(--mono);color:var(--verde);font-size:.8rem;margin-bottom:8px}
+.como li b{color:var(--texto);font-weight:600}
+
+footer.pie{padding:36px 0 44px;font-size:.87rem;color:var(--tenue);border-top:1px solid var(--linea)}
+.pie .env{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.pie a{color:var(--suave);text-decoration:none;margin-right:18px;display:inline-block;padding:10px 0}
+.pie a:hover{color:var(--verde)}
+
+/* ── aparición al bajar ───────────────────────────────────── */
+.js .rev{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
+.js .rev.dentro{opacity:1;transform:none}
+@media print{.js .rev,.js .registro li,.js .ahora{opacity:1!important;transform:none!important}.panel[hidden]{display:grid}.borrador,#lluvia{display:none}}
+.rev.d1{transition-delay:.08s}.rev.d2{transition-delay:.16s}
+
+section[id],.panel{scroll-margin-top:84px}
+@media(max-width:380px){.pestanas button[role="tab"]{font-size:.71rem;padding:10px 2px;letter-spacing:-.01em}}
+
+/* ── 🔴 BORRAR ESTE BLOQUE ANTES DE PUBLICAR ───────────────── */
+.borrador{position:fixed;bottom:0;left:0;right:0;z-index:99;background:#8a531c;color:#fff;
+  text-align:center;font-size:.8rem;padding:7px 12px}
+body:has(.borrador){padding-bottom:34px}
+
+/* ── menú del móvil ───────────────────────────────────────── */
+.abrir-menu{display:none;background:none;border:0;padding:10px;cursor:pointer;width:44px;height:44px;flex-direction:column;justify-content:center;gap:5px}
+.abrir-menu span{display:block;height:2px;width:22px;background:var(--texto);border-radius:2px;transition:transform .25s,opacity .18s}
+.abrir-menu.activo span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.abrir-menu.activo span:nth-child(2){opacity:0}
+.abrir-menu.activo span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:860px){
+  .abrir-menu{display:flex}
+  nav .env{position:relative}
+  .enlaces{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;
+    background:var(--capa);border-bottom:1px solid var(--linea);box-shadow:0 18px 40px rgba(0,0,0,.45);
+    max-height:0;overflow:hidden;transition:max-height .3s cubic-bezier(.2,.7,.3,1)}
+  .enlaces:not(.abierto){visibility:hidden;transition:max-height .3s cubic-bezier(.2,.7,.3,1),visibility 0s .3s}
+  .enlaces.abierto{max-height:calc(100vh - 110px);overflow-y:auto}
+  .pestanas{width:100%;display:grid;grid-template-columns:repeat(6,1fr);border-radius:18px}
+  .pestanas button{grid-column:span 2}
+  .pestanas button:nth-child(n+4){grid-column:span 3}
+  .pestanas button{flex-direction:column;justify-content:center;white-space:normal;text-align:center;min-height:56px;padding:10px 6px;font-size:.84rem;line-height:1.2;border-radius:14px}
+
+  .enlaces a,.enlaces a:not(.btn){display:block;padding:17px 24px;font-size:1.02rem;border-top:1px solid var(--linea)}
+  .enlaces a:not(.btn)::after{display:none}
+  .enlaces a[aria-current]{background:var(--capa2);box-shadow:inset 3px 0 0 var(--verde)}
+  .enlaces a.btn{margin:16px 24px 22px;text-align:center;padding:15px 24px;display:flex}
+  .desplegable{border-top:1px solid var(--linea)}
+  .abre-sub{display:flex;justify-content:space-between;width:100%;box-sizing:border-box;padding:17px 24px;font-size:1.02rem}
+  .abre-sub.actual{box-shadow:inset 3px 0 0 var(--verde)}
+  .sub{position:static;padding:0 0 8px}
+  .sub .caja{min-width:0;background:none;border:0;box-shadow:none;padding:0 12px}
+  .enlaces .sub a,.enlaces .sub a:not(.btn){border-top:0;padding:13px 16px 13px 28px;font-size:.98rem}
+}
+@media(max-width:560px){
+  section{padding:72px 0}
+  .hero{padding:72px 0 56px}
+  .hero .etiqueta{font-size:.78rem;letter-spacing:.05em}
+  .hero::after{background:linear-gradient(180deg,rgba(11,16,22,.35) 0%,rgba(11,16,22,.62) 50%,var(--fondo) 100%)}
+  .acciones{flex-direction:column;align-items:stretch}
+  .acciones .btn{width:100%}
+  .datos{grid-template-columns:1fr;margin-top:44px}
+  .datos div{display:flex;align-items:baseline;gap:14px}
+  .datos b{font-size:1.15rem;min-width:104px;white-space:nowrap}
+  .datos span{margin-top:0}
+  .marca em{font-size:.7rem}
+  .panel{padding:24px}
+  .anillo{width:140px;height:140px}
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .rev,.registro li,.ahora,.js .rev,.js .registro li,.js .ahora{opacity:1;transform:none;transition:none}
+  .tarjeta:hover,.btn:hover{transform:none}
+  .panel.entra{animation:none}
+  .consola .barra .vivo::before,.estado::before{animation:none}
+  .anillo .arco{transition:none}
+  .escena *{animation:none!important}
+  .hilo::after{display:none}
+  .plegable details[open] .dentro-pleg{animation:none}
+  .plegable .abre svg{transition:none}
+  .wa-flota,.wa-flota.oculto{transition:none}
+  .s1-fila,.s2-b,.s4-b,.s5-c{opacity:1!important}
+  .s1-sobre{opacity:1!important;transform:translateX(118px)!important}
+  .tachar li span{transition:none}
+}
+
+/* ── página interior: ficha de Google ─────────────────────── */
+.hero.interior{padding:96px 0 80px}
+.hero.interior .rejilla-hero{display:grid;gap:44px;align-items:center}
+@media(min-width:960px){.hero.interior .rejilla-hero{grid-template-columns:1.1fr .9fr}}
+.hero.interior h1{font-size:clamp(2rem,4.4vw,3.2rem);max-width:18ch}
+nav.miga{position:static;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;border:0;z-index:auto;font-size:.84rem;color:var(--tenue);margin-bottom:22px}
+.miga a{color:var(--suave);text-decoration:none}
+.miga a:hover{color:var(--verde)}
+.ficha-mock{position:relative;z-index:2;border:1px solid var(--linea2);border-radius:20px;background:rgba(16,23,31,.92);
+  backdrop-filter:blur(6px);padding:24px;max-width:420px;width:100%;justify-self:center;box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.fm-cab{display:flex;gap:14px;align-items:center;padding-bottom:18px;border-bottom:1px solid var(--linea)}
+.fm-pin{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:var(--verde-vidrio);color:var(--verde);border:1px solid rgba(53,195,161,.3);flex:none}
+.fm-cab b{display:block;color:var(--texto);font-size:1.05rem}
+.fm-cab span{font-size:.82rem;color:var(--tenue)}
+.fm-campos{list-style:none;display:flex;flex-direction:column;gap:2px;padding:12px 0}
+.fm-campos li{display:flex;justify-content:space-between;align-items:center;padding:8px 2px;font-family:var(--mono);font-size:.82rem;color:var(--tenue);transition:color .35s}
+.fm-campos li i{width:20px;height:20px;border-radius:6px;border:1px solid var(--linea2);display:grid;place-items:center;font-style:normal;color:transparent;transition:all .35s}
+.fm-campos li.ok{color:var(--texto)}
+.fm-campos li.ok i{border-color:rgba(53,195,161,.5);background:var(--verde-vidrio);color:var(--verde)}
+.fm-burbuja{border:1px solid var(--linea2);border-radius:14px;padding:12px 14px;margin-top:10px;transition:opacity .45s,transform .45s}
+.fm-burbuja em{display:block;font-style:normal;font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;margin-bottom:8px}
+.fm-burbuja i{display:block;height:7px;border-radius:4px;background:var(--linea2);margin-top:6px}
+.fm-burbuja i+i{width:65%}
+.fm-resena{border-color:rgba(227,166,100,.45)}
+.fm-resena em{color:var(--ambar)}
+.fm-resp{margin-left:28px;border-color:rgba(53,195,161,.4)}
+.fm-resp em{color:var(--verde)}
+.js .fm-burbuja{opacity:0;transform:translateY(8px)}
+.js .fm-burbuja.ve{opacity:1;transform:none}
+
+.cadena.cuatro li p{font-size:.92rem;margin-top:6px}
+@media(min-width:820px){.cadena.cuatro{grid-template-columns:repeat(4,1fr)}}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.chips span{font-size:.78rem;color:var(--suave);border:1px solid var(--linea2);border-radius:999px;padding:4px 10px}
+
+.vias{display:grid;gap:18px;margin-top:40px}
+@media(min-width:880px){.vias{grid-template-columns:1fr 1fr}}
+.via{border:1px solid var(--linea);border-radius:20px;background:var(--fondo);padding:30px;display:grid;grid-template-columns:minmax(0,1fr);gap:24px}
+.via h3{font-size:1.25rem}
+.via p{font-size:.96rem}
+.via .vis{border:1px solid var(--linea);border-radius:16px;background:var(--capa);min-height:210px;display:grid;place-items:center;padding:22px}
+.qr-cartel{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:20px}
+.qr-cartel svg{flex:none}
+.qr-cartel span{font-family:var(--mono);font-size:.8rem;color:var(--suave);max-width:13ch;line-height:1.5}
+.qr-linea{animation:escanea 2.6s ease-in-out infinite}
+@keyframes escanea{0%,100%{transform:translateY(0)}50%{transform:translateY(64px)}}
+.chat{width:100%;max-width:330px;display:flex;flex-direction:column;gap:10px}
+.chat .hora{font-family:var(--mono);font-size:.72rem;color:var(--tenue);text-align:center}
+.chat .msg{align-self:flex-start;background:#163a33;color:#dff5ee;border-radius:4px 16px 16px 16px;padding:12px 14px;font-size:.9rem;line-height:1.45;max-width:92%}
+.chat .msg u{color:#7fe3c9;text-decoration:underline}
+.chat .escribiendo{align-self:flex-start;display:none;gap:4px;padding:12px 14px;border-radius:4px 16px 16px 16px;background:#163a33}
+.chat .escribiendo b{width:6px;height:6px;border-radius:50%;background:#7fe3c9;animation:punto 1.2s infinite}
+.chat .escribiendo b:nth-child(2){animation-delay:.15s}.chat .escribiendo b:nth-child(3){animation-delay:.3s}
+@keyframes punto{0%,60%,100%{opacity:.25}30%{opacity:1}}
+.js .chat:not(.listo) .escribiendo{display:flex}
+.js .chat .msg{display:none}
+.js .chat.listo .msg{display:block;animation:entra .4s cubic-bezier(.2,.7,.3,1)}
+.js .chat.listo .escribiendo{display:none}
+
+.tarjeta-cierre{border:1px solid var(--linea2);border-radius:24px;padding:40px;background:linear-gradient(135deg,rgba(53,195,161,.10),var(--capa) 55%);display:grid;gap:30px}
+@media(min-width:900px){.tarjeta-cierre{grid-template-columns:1.1fr .9fr;align-items:center}}
+.relac{display:grid;gap:12px}
+.relac h3{font-family:var(--mono);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tenue);font-weight:500;margin-bottom:4px}
+.relac a{display:flex;gap:16px;align-items:center;text-decoration:none;border:1px solid var(--linea);border-radius:var(--radio);background:var(--fondo);padding:16px 18px;transition:border-color .2s,transform .2s}
+.relac a:hover{border-color:var(--linea2);transform:translateY(-2px)}
+.relac .ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;flex:none;background:var(--verde-vidrio);color:var(--verde);border:1px solid rgba(53,195,161,.25)}
+.relac b{display:block;color:var(--texto)}
+.relac small{color:var(--suave);font-size:.88rem}
+.relac a.todos{border:0;background:none;padding:10px 4px;font-weight:600;color:var(--verde);font-size:.93rem}
+@media(max-width:560px){.tarjeta-cierre{padding:24px}}
+@media(max-width:560px){.hero.interior{padding:56px 0 56px}.via{padding:22px}.ficha-mock{padding:20px}}
+@media (prefers-reduced-motion: reduce){.qr-linea,.chat .escribiendo b,.js .chat.listo .msg{animation:none}.js .fm-burbuja{opacity:1;transform:none}}
+
+/* ── páginas interiores (web completa v4) ─────────────────── */
+.faq{max-width:820px;margin-top:34px;display:grid;gap:10px}
+.faq details{border:1px solid var(--linea);border-radius:var(--radio);background:var(--capa);transition:border-color .2s}
+.faq details[open]{border-color:var(--linea2)}
+.faq summary{list-style:none;cursor:pointer;padding:18px 22px;font-weight:600;color:var(--texto);display:flex;justify-content:space-between;align-items:center;gap:16px;border-radius:var(--radio)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--verde);font-size:1.4rem;line-height:1;flex:none}
+.faq details[open] summary::after{content:"−"}
+.faq summary:focus-visible{outline:2px solid var(--verde);outline-offset:2px}
+.faq details p{padding:0 22px 20px;font-size:.96rem}
+.sintomas{display:grid;gap:12px;margin-top:34px}
+@media(min-width:760px){.sintomas{grid-template-columns:1fr 1fr}}
+.sintomas li{list-style:none;display:flex;gap:14px;align-items:flex-start;border:1px solid var(--linea);border-radius:var(--radio);background:var(--capa);padding:18px 20px;color:var(--texto)}
+.sintomas li svg{flex:none;color:var(--ambar);margin-top:2px}
+.compara{display:grid;gap:18px;margin-top:38px}
+@media(min-width:860px){.compara{grid-template-columns:1fr 1fr}}
+.compara .col{border:1px solid var(--linea);border-radius:var(--radio);background:var(--capa);padding:28px}
+.compara .col.ahora-col{border-color:rgba(53,195,161,.35);background:linear-gradient(160deg,rgba(53,195,161,.07),var(--capa) 60%)}
+.compara h3{font-family:var(--mono);font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--tenue);font-weight:500;margin-bottom:16px}
+.compara .ahora-col h3{color:var(--verde)}
+.compara ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.compara li{display:flex;gap:12px;align-items:flex-start;color:var(--suave);font-size:.97rem}
+.compara .ahora-col li{color:var(--texto)}
+.compara li svg{flex:none;margin-top:3px}
+.compara .antes-col li svg{color:var(--ambar)}
+.compara .ahora-col li svg{color:var(--verde)}
+.aviso{max-width:820px;margin-top:30px;border:1px solid var(--linea);border-left:3px solid var(--ambar);border-radius:var(--radio);background:var(--capa);padding:24px 26px}
+.aviso p{color:var(--texto)}
+.aviso p+p{margin-top:10px;color:var(--suave);font-size:.95rem}
+.hero.interior .escena{max-width:440px;width:100%;justify-self:center;position:relative;z-index:2;background:rgba(16,23,31,.92);box-shadow:0 30px 60px rgba(0,0,0,.45)}
+.cifra-caso{display:grid;gap:22px;margin-top:38px}
+@media(min-width:900px){.cifra-caso{grid-template-columns:.8fr 1.2fr;align-items:center}}
+
+.saltar{position:absolute;left:12px;top:-60px;z-index:100;background:var(--verde);color:#06201a;padding:10px 16px;border-radius:10px;font-weight:600;text-decoration:none}
+.saltar:focus{top:12px}
+.cadena:not(.en-vista) .hilo::after{animation-play-state:paused}
+@media print{.js .rev,.js .registro li,.js .ahora{transition:none!important}.anillo .arco{stroke-dashoffset:0!important}
+  .fm-burbuja{opacity:1!important;transform:none!important}.wa-flota,.saltar{display:none!important}}
+</style>
 </head>
 <body>
-<nav>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+<nav aria-label="Principal">
   <div class="env">
     <a class="marca" href="index.html">Cero a Mano<span>.</span> <em>Alejandro de la Rosa</em></a>
     <button class="abrir-menu" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
       <span></span><span></span><span></span>
     </button>
-    <span class="enlaces" id="menu">
+    <div class="enlaces" id="menu">
       <a href="index.html">Inicio</a>
-      <a href="automatizar-reservas-y-pedidos.html">Automatización</a>
-      <a href="whatsapp-business.html" aria-current="page">WhatsApp Business</a>
-      <a href="seo-para-negocios.html">SEO</a>
+      <div class="desplegable">
+        <button class="abre-sub actual" aria-expanded="false" aria-controls="sub-servicios">Servicios <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="sub" id="sub-servicios"><div class="caja">
+          <a href="automatizar-reservas-y-pedidos.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8.5M20 4v4.5h-4.5M20 12a8 8 0 0 1-13.7 5.7L4 15.5M4 20v-4.5h4.5"/></svg>Automatización</a>
+          <a href="whatsapp-business.html" aria-current="page"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.3 7.4L3 21l2.1-5.7A8.4 8.4 0 1 1 21 11.5Z"/></svg>WhatsApp Business</a>
+          <a href="webs.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2.5"/><path d="M3 8h18M8 21h8M12 18v3"/></svg>Webs</a>
+          <a href="seo-para-negocios.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>SEO</a>
+          <a href="ficha-de-google.html"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Ficha de Google</a>
+        </div></div>
+      </div>
       <a href="caso-free-tours-malta.html">Caso real</a>
       <a href="#contacto" class="btn chico">Contactar</a>
-    </span>
+    </div>
   </div>
 </nav>
-
-<header class="hero">
+<main id="contenido">
+<header class="hero interior">
+  <canvas id="lluvia" aria-hidden="true"></canvas>
   <div class="env">
-    <p class="migas"><a href="index.html">Inicio</a> &nbsp;/&nbsp; WhatsApp Business</p>
-    <h1>WhatsApp Business, configurado para trabajar</h1>
-    <p class="grande">Casi todos los negocios pequeños atienden por WhatsApp, y casi ninguno lo tiene ordenado. El resultado es una lista de conversaciones donde no se distingue a quién falta contestar de quién ya compró hace seis meses.</p>
-    <a href="#contacto" class="btn">Explícame cómo atiendes hoy</a>
+    <div class="rejilla-hero">
+      <div>
+        <span class="etiqueta">WhatsApp Business</span>
+        <h1>WhatsApp Business, <span class="resalte">configurado para trabajar</span>.</h1>
+        <p class="grande">Casi todos los negocios pequeños atienden por WhatsApp, y casi ninguno lo tiene ordenado: no se distingue a quién falta contestar de quién compró hace seis meses.</p>
+        <div class="acciones"><a href="#contacto" class="btn">Explícame cómo atiendes hoy</a><a href="#que-hago" class="btn hueco">Qué hago</a></div>
+      </div>
+      <div class="escena" aria-hidden="true">
+        <svg viewBox="0 0 400 300">
+          <style>
+            .s2-b{opacity:0;animation:s2 4.5s ease-out infinite}
+            .s2-b.b2{animation-delay:.6s}.s2-b.b3{animation-delay:1.2s}
+            @keyframes s2{0%{opacity:0;transform:translateY(10px)}12%,85%{opacity:1;transform:none}100%{opacity:0}}
+          </style>
+          <g class="s2-b"><rect x="40" y="56" width="200" height="50" rx="14" fill="#151e28" stroke="#2a3848"/><rect x="56" y="72" width="120" height="8" rx="4" fill="#2a3848"/><rect x="56" y="87" width="80" height="8" rx="4" fill="#2a3848"/>
+            <rect x="252" y="68" width="100" height="26" rx="13" fill="rgba(227,166,100,.12)" stroke="#e3a664"/><text x="302" y="86" text-anchor="middle" font-family="ui-monospace,monospace" font-size="12" fill="#e3a664">nuevo</text></g>
+          <g class="s2-b b2"><rect x="40" y="124" width="200" height="50" rx="14" fill="#151e28" stroke="#2a3848"/><rect x="56" y="140" width="140" height="8" rx="4" fill="#2a3848"/><rect x="56" y="155" width="60" height="8" rx="4" fill="#2a3848"/>
+            <rect x="252" y="136" width="100" height="26" rx="13" fill="rgba(53,195,161,.12)" stroke="#35c3a1"/><text x="302" y="154" text-anchor="middle" font-family="ui-monospace,monospace" font-size="12" fill="#35c3a1">en curso</text></g>
+          <g class="s2-b b3"><rect x="40" y="192" width="200" height="50" rx="14" fill="#151e28" stroke="#2a3848"/><rect x="56" y="208" width="100" height="8" rx="4" fill="#2a3848"/><rect x="56" y="223" width="130" height="8" rx="4" fill="#2a3848"/>
+            <rect x="252" y="204" width="100" height="26" rx="13" fill="rgba(163,175,188,.08)" stroke="#7d8a98"/><text x="302" y="222" text-anchor="middle" font-family="ui-monospace,monospace" font-size="12" fill="#a3afbc">hecho</text></g>
+        </svg>
+      </div>
+    </div>
   </div>
 </header>
 
 <section>
   <div class="env">
-    <h2>El síntoma que lo delata</h2>
-    <p class="grande estrecho">Si para saber cómo va un cliente tienes que buscar la conversación y leerla entera, no tienes un sistema de gestión: tienes un historial. Y un historial no te avisa de nada.</p>
-    <ul class="lista puntos estrecho">
-      <li>No se distingue un presupuesto enviado de uno aceptado</li>
-      <li>Se responde lo mismo veinte veces al día, escrito de nuevo cada vez</li>
-      <li>Alguien se queda sin contestar y nadie se entera hasta que se queja</li>
-      <li>No hay forma de saber a cuántos clientes tienes pendientes ahora mismo</li>
+    <span class="etiqueta">El síntoma</span>
+    <h2>Cuando WhatsApp se queda en un historial</h2>
+    <p class="grande estrecho">Si para saber cómo va un cliente tienes que leer la conversación entera, nada te avisa de nada.</p>
+    <ul class="sintomas">
+      <li class="rev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v4M12 17h.01"/></svg>No se distingue un presupuesto enviado de uno aceptado</li>
+      <li class="rev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v4M12 17h.01"/></svg>Se responde lo mismo veinte veces al día, escrito de nuevo cada vez</li>
+      <li class="rev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v4M12 17h.01"/></svg>Alguien se queda sin contestar y nadie se entera hasta que se queja</li>
+      <li class="rev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 10v4M12 17h.01"/></svg>No sabes a cuántos clientes tienes pendientes ahora mismo</li>
     </ul>
   </div>
 </section>
 
-<section class="crema">
+<section class="fondo-capa" id="que-hago">
   <div class="env">
-    <h2>Qué hago</h2>
-    <div class="rejilla dos">
-      <div class="tarjeta rev">
-        <span class="num">1</span><h3>Un sistema de etiquetas pensado para tu negocio</h3>
-        <p>No sirve la misma estructura para una peluquería que para una agencia de viajes. Primero pregunto cómo trabajas y qué tipos de cliente tienes, y a partir de ahí diseño las etiquetas. Por tipo y por estado, que son dos cosas distintas y conviene no mezclarlas.</p>
-      </div>
-      <div class="tarjeta rev">
-        <span class="num">2</span><h3>Respuestas rápidas para lo que repites</h3>
-        <p>Horarios, precios, ubicación, condiciones. Todo lo que escribes a diario queda guardado y se inserta en dos toques, con el mismo texto siempre. Además de tiempo, ganas coherencia.</p>
-      </div>
-      <div class="tarjeta rev">
-        <span class="num">3</span><h3>El perfil completo</h3>
-        <p>Horarios, dirección, web, descripción, mensaje de bienvenida y de ausencia, y catálogo si tu negocio lo aprovecha. Es lo primero que ve alguien que te escribe por primera vez.</p>
-      </div>
-      <div class="tarjeta rev">
-        <span class="num">4</span><h3>Una hoja de seguimiento</h3>
-        <p>Aquí está la diferencia real. Una hoja donde ves todos tus clientes, en qué estado está cada uno y qué toca hacer. De un vistazo, sin abrir una sola conversación.</p>
-      </div>
-    </div>
+    <span class="etiqueta">Qué hago</span>
+    <h2>Lo que monto en tu WhatsApp</h2>
+    <ol class="cadena cuatro rev" role="list">
+      <li><span class="nodo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12V4h8l9 9-8 8-9-9Z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></span>
+        <div><em>Paso 1</em><b>Etiquetas a tu medida</b><p>Por tipo de cliente y por estado, que son dos cosas distintas. No sirve la misma estructura para una peluquería que para una agencia.</p></div><i class="hilo" aria-hidden="true"></i></li>
+      <li><span class="nodo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></span>
+        <div><em>Paso 2</em><b>Respuestas rápidas</b><p>Horarios, precios, ubicación y condiciones, guardados y a dos toques. Siempre el mismo texto.</p></div><i class="hilo" aria-hidden="true"></i></li>
+      <li><span class="nodo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
+        <div><em>Paso 3</em><b>El perfil completo</b><p>Horarios, dirección, web, mensaje de bienvenida y de ausencia, y catálogo si a tu negocio le sirve.</p></div><i class="hilo" aria-hidden="true"></i></li>
+      <li><span class="nodo"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
+        <div><em>Paso 4</em><b>Una hoja de seguimiento</b><p>Todos tus clientes, en qué estado está cada uno y qué toca hacer. Sin abrir una sola conversación.</p></div></li>
+    </ol>
   </div>
 </section>
 
 <section>
   <div class="env">
-    <h2>El paso siguiente, cuando lo necesites</h2>
-    <p class="grande estrecho">Con los clientes ordenados y una hoja que refleja su estado, ya existe la base para automatizar: que los datos entren solos, que las confirmaciones salgan solas y que el seguimiento no dependa de que alguien se acuerde.</p>
-    <p style="margin-top:22px"><a class="btn hueco" href="automatizar-reservas-y-pedidos.html">Ver automatización de reservas y pedidos</a></p>
+    <span class="etiqueta">El paso siguiente</span>
+    <h2>Con los clientes ordenados, ya se puede automatizar</h2>
+    <div class="aviso rev"><p>Con una hoja que refleja el estado de cada cliente, ya hay base para que los datos entren solos, las confirmaciones salgan solas y el seguimiento no dependa de acordarse.</p><p><a class="mas" href="automatizar-reservas-y-pedidos.html">Ver automatización de reservas y pedidos <span aria-hidden="true">→</span></a></p></div>
   </div>
 </section>
 
-<section class="arena">
+<section class="fondo-capa">
   <div class="env">
-    <h2>Preguntas frecuentes</h2>
+    <span class="etiqueta">Preguntas frecuentes</span>
+    <h2>Lo que suelen preguntarme</h2>
     <div class="faq">
-      <details><summary>¿Pierdo mis conversaciones al configurarlo?</summary><p>No. WhatsApp Business conserva tus chats y tus contactos. Lo que se añade es organización encima de lo que ya tienes.</p></details>
-      <details><summary>¿Sirve si atiendo entre varias personas?</summary><p>Sí, y de hecho es cuando más se nota. Un sistema de etiquetas compartido evita que dos personas contesten al mismo cliente o que ninguna lo haga.</p></details>
-      <details><summary>¿Me lo tengo que aprender yo?</summary><p>Lo dejo montado y te explico cómo funciona. La idea es que puedas mantenerlo sin depender de mí; si prefieres una sesión de formación, la incluyo aparte.</p></details>
+      <details><summary>¿Pierdo mis conversaciones al configurarlo?</summary><p>No. WhatsApp Business conserva tus chats y tus contactos. Lo que se añade es orden encima de lo que ya tienes.</p></details>
+      <details><summary>¿Sirve si atiendo entre varias personas?</summary><p>Sí, y es cuando más se nota. Unas etiquetas compartidas evitan que dos personas contesten al mismo cliente o que no lo haga ninguna.</p></details>
+      <details><summary>¿Me lo tengo que aprender yo?</summary><p>Lo dejo montado y te explico cómo funciona, para que puedas mantenerlo sin depender de mí. Si prefieres una sesión de formación, la incluyo aparte.</p></details>
     </div>
   </div>
 </section>
+
 <section class="cta" id="contacto">
   <div class="env">
-    <h2>Explícame el proceso que quieres dejar de hacer a mano</h2>
-    <p class="grande estrecho">No necesitas saber si se puede automatizar ni cómo se hace. Descríbeme la tarea con tus palabras y te digo si tiene solución, cuánto llevaría y qué coste tendría. Si considero que no compensa, también te lo diré.</p>
-    <div class="vias">
-      <a class="btn" href="mailto:alex.automatizacions@gmail.com">Escribir un correo</a>
+    <div class="tarjeta-cierre">
+      <div>
+        <span class="etiqueta">Siguiente paso</span>
+        <h2>Explícame cómo atiendes hoy a tus clientes</h2>
+        <p class="grande">Te digo qué ordenaría primero, cuánto llevaría y qué coste tendría.</p>
+        <div class="acciones" style="margin-top:26px">
+          <a class="btn wa" href="https://wa.me/FALTA-NUMERO?text=Hola%2C%20vengo%20de%20tu%20web" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.3 14.8L2.4 21.6l4.7-1.2A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.7-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.1 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 5 5 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.2-.2-.5-.3Z"/></svg>Escríbeme por WhatsApp</a>
+          <a class="btn hueco" href="mailto:alex.automatizacions@gmail.com">Escribir un correo</a>
+        </div>
+      </div>
+      <div class="relac">
+        <h3>Se combina con</h3>
+        <a href="automatizar-reservas-y-pedidos.html"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8.5M20 4v4.5h-4.5M20 12a8 8 0 0 1-13.7 5.7L4 15.5M4 20v-4.5h4.5"/></svg></span><span><b>Automatización</b><small>Para que los clientes nuevos entren solos en tu hoja.</small></span></a>
+        <a href="ficha-de-google.html"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><span><b>Ficha de Google</b><small>Tu ficha de Google, con un enlace a tu WhatsApp.</small></span></a>
+        <a href="webs.html"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2.5"/><path d="M3 8h18M8 21h8M12 18v3"/></svg></span><span><b>Webs</b><small>Tu web con el botón de WhatsApp siempre a mano.</small></span></a>
+        <a class="todos" href="index.html#servicios">Ver todos los servicios <span aria-hidden="true">→</span></a>
+      </div>
     </div>
   </div>
 </section>
+</main>
 
 <footer class="pie">
   <div class="env">
     <span>
       <a href="index.html">Inicio</a>
       <a href="automatizar-reservas-y-pedidos.html">Automatización</a>
-      <a href="whatsapp-business.html">WhatsApp Business</a>
+      <a href="whatsapp-business.html" aria-current="page">WhatsApp Business</a>
+      <a href="webs.html">Webs</a>
       <a href="seo-para-negocios.html">SEO</a>
+      <a href="ficha-de-google.html">Ficha de Google</a>
       <a href="caso-free-tours-malta.html">Caso real</a>
     </span>
     <span><strong>Cero a Mano</strong> · Alejandro de la Rosa · Automatización de procesos · España</span>
   </div>
 </footer>
+<!-- 🔴 WHATSAPP SIN NÚMERO (FALTA-NUMERO): poner el de Alex -->
+<a class="wa-flota" href="https://wa.me/FALTA-NUMERO?text=Hola%2C%20vengo%20de%20tu%20web" target="_blank" rel="noopener" aria-label="Escríbeme por WhatsApp (se abre en otra pestaña)"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.3 14.8L2.4 21.6l4.7-1.2A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.7-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.1 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 5 5 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.2-.2-.5-.3Z"/></svg></a>
+<div class="borrador">Versión en revisión · los textos y el diseño pueden cambiar</div>
 <script>
-// Aparicion suave de los bloques al entrar en pantalla.
+var quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Ondas de la cabecera: líneas que fluyen como un mapa de relieve, tres de ellas en ámbar.
+(function () {
+  var lienzo = document.getElementById('lluvia');
+  if (!lienzo || !lienzo.getContext) return;
+  var ctx = lienzo.getContext('2d');
+  var W = 0, H = 0, dpr = 1, t0 = performance.now(), ultimo = 0, anim = null, visible = true;
+  var COLOR = { 3: [240, 194, 122, .68], 8: [227, 166, 100, .72], 12: [214, 140, 82, .62] }; // las de color
+  function preparar() {
+    var w = lienzo.clientWidth, h = lienzo.clientHeight;
+    if (w === W && h === H) return false;
+    W = w; H = h; dpr = 1;                          // líneas suaves: no hace falta más densidad y ahorra mucho
+    lienzo.width = W; lienzo.height = H; ctx.setTransform(1, 0, 0, 1, 0, 0);
+    return true;
+  }
+  function pintar(t) {
+    ctx.clearRect(0, 0, W, H);
+    var n = 14;
+    for (var k = 0; k < n; k++) {
+      var base = H * (.18 + k * .055), amp = 18 + k * 2.2, f = .0032 - k * .00009, fase = t * .00025 * (1 + k * .06) + k * .7;
+      ctx.beginPath();
+      for (var x = 0; x <= W + 10; x += 10) {
+        var y = base + Math.sin(x * f + fase) * amp + Math.sin(x * f * 2.3 - fase * 1.4) * amp * .35;
+        if (x === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      var c = COLOR[k];
+      ctx.strokeStyle = c ? 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + (W <= 700 ? c[3] * .62 : c[3]) + ')' : 'rgba(53,195,161,' + (.2 + (k % 3) * .08) + ')';
+      ctx.lineWidth = c ? 1.8 : 1.2; ctx.stroke();
+    }
+  }
+  function bucle(t) {
+    anim = null; if (!visible || document.hidden) return;
+    if (ultimo && t - ultimo < 30) { anim = requestAnimationFrame(bucle); return; }
+    ultimo = t; pintar(t - t0); anim = requestAnimationFrame(bucle);
+  }
+  function arrancar() { if (!anim && !quieto) { ultimo = 0; anim = requestAnimationFrame(bucle); } }
+  preparar();
+  pintar(quieto ? 20000 : 0);
+  var vigia = function () { if (preparar()) pintar(quieto ? 20000 : performance.now() - t0); };
+  if ('ResizeObserver' in window) new ResizeObserver(vigia).observe(lienzo); else window.addEventListener('resize', vigia);
+  if (quieto) return;
+  arrancar();
+  document.addEventListener('visibilitychange', arrancar);
+  if ('IntersectionObserver' in window) new IntersectionObserver(function (e) { visible = e[0].isIntersecting; arrancar(); }).observe(lienzo);
+})();
+
+// Aparición suave de los bloques al entrar en pantalla.
 (function () {
   var bloques = document.querySelectorAll('.rev');
-  if (!('IntersectionObserver' in window)) {
-    for (var i = 0; i < bloques.length; i++) bloques[i].classList.add('dentro');
+  if (quieto || !('IntersectionObserver' in window)) {
+    bloques.forEach(function (b) { b.classList.add('dentro'); });
     return;
   }
   var obs = new IntersectionObserver(function (entradas) {
@@ -136,34 +704,60 @@
       if (e.isIntersecting) { e.target.classList.add('dentro'); obs.unobserve(e.target); }
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-  bloques.forEach(function (b, i) {
-    if (i % 3 === 1) b.classList.add('d1');
-    if (i % 3 === 2) b.classList.add('d2');
-    obs.observe(b);
+  bloques.forEach(function (b) { obs.observe(b); });
+})();
+
+// Menú «Servicios»: se abre con clic o teclado (y al pasar el ratón en ordenador).
+(function () {
+  var cajas = document.querySelectorAll('.desplegable');
+  cajas.forEach(function (d) {
+    var b = d.querySelector('.abre-sub');
+    function poner(abrir) { d.classList.toggle('abierto', abrir); b.setAttribute('aria-expanded', abrir ? 'true' : 'false'); }
+    b.addEventListener('click', function (e) { e.stopPropagation(); poner(!d.classList.contains('abierto')); });
+    d.addEventListener('keydown', function (e) { if (e.key === 'Escape' && d.classList.contains('abierto')) { poner(false); b.focus(); e.stopPropagation(); } });
+    d.addEventListener('focusout', function (e) { if (!d.contains(e.relatedTarget) && window.innerWidth > 860) poner(false); });
+    document.addEventListener('click', function (e) { if (!d.contains(e.target) || (e.target.closest && e.target.closest('.sub a'))) poner(false); });
+    d.addEventListener('mouseenter', function () { if (window.matchMedia('(hover:hover) and (min-width:861px)').matches) b.setAttribute('aria-expanded', 'true'); });
+    d.addEventListener('mouseleave', function () { if (window.matchMedia('(hover:hover) and (min-width:861px)').matches && !d.classList.contains('abierto')) b.setAttribute('aria-expanded', 'false'); });
   });
 })();
-</script>
-<div class="borrador">Versión en revisión &middot; los textos y el diseño pueden cambiar</div>
-<script>
-// Menu del movil: abre y cierra la lista de enlaces.
+
+// Botón flotante de WhatsApp: se esconde mientras se ve la sección de contacto.
+(function () {
+  var b = document.querySelector('.wa-flota'), c = document.getElementById('contacto');
+  if (!b || !c || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function (e) { b.classList.toggle('oculto', e[0].isIntersecting); }, { threshold: 0.2 }).observe(c);
+})();
+
+// Menú del móvil: abre y cierra la lista de enlaces.
 (function () {
   var boton = document.querySelector('.abrir-menu');
   var menu = document.getElementById('menu');
   if (!boton || !menu) return;
   function alternar(abrir) {
-    var estaAbierto = abrir === undefined ? !menu.classList.contains('abierto') : abrir;
-    menu.classList.toggle('abierto', estaAbierto);
-    boton.classList.toggle('activo', estaAbierto);
-    boton.setAttribute('aria-expanded', estaAbierto ? 'true' : 'false');
-    boton.setAttribute('aria-label', estaAbierto ? 'Cerrar menú' : 'Abrir menú');
+    var abierto = abrir === undefined ? !menu.classList.contains('abierto') : abrir;
+    menu.classList.toggle('abierto', abierto);
+    boton.classList.toggle('activo', abierto);
+    boton.setAttribute('aria-expanded', abierto ? 'true' : 'false');
+    boton.setAttribute('aria-label', abierto ? 'Cerrar menú' : 'Abrir menú');
   }
   boton.addEventListener('click', function () { alternar(); });
-  menu.addEventListener('click', function (e) {
-    if (e.target.tagName === 'A') alternar(false);
-  });
+  menu.addEventListener('focusout', function (e) { if (menu.classList.contains('abierto') && !boton.parentNode.contains(e.relatedTarget)) alternar(false); });
+  menu.addEventListener('click', function (e) { if (e.target.closest && e.target.closest('a')) alternar(false); });
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') alternar(false);
+    if (e.key !== 'Escape' || !menu.classList.contains('abierto')) return;
+    var dentro = menu.contains(document.activeElement);
+    alternar(false);
+    if (dentro) boton.focus();
   });
+})();
+
+
+// Las líneas de «se combinan» solo se animan cuando se ven.
+(function () {
+  if (!('IntersectionObserver' in window)) { document.querySelectorAll('.cadena').forEach(function (c) { c.classList.add('en-vista'); }); return; }
+  var o = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('en-vista', e.isIntersecting); }); });
+  document.querySelectorAll('.cadena').forEach(function (c) { o.observe(c); });
 })();
 </script>
 </body>
