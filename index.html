@@ -404,6 +404,11 @@ body:has(.borrador){padding-bottom:34px}
 .marca .texto span{color:var(--verde)}
 @media(prefers-reduced-motion:reduce){.marca .logo{transition:none}}
 @media(max-width:21em){.marca .logo{display:none}} /* en «em»: con la letra grande en un móvil estrecho, el logo se oculta para que el nombre quepa */
+
+/* ── franja de revisión: se esconde tras unos segundos sin moverse (03/10/2026) ── */
+.borrador{transition:transform .45s ease,opacity .45s ease}
+.borrador.oculta{transform:translateY(100%);opacity:0;pointer-events:none}
+@media(prefers-reduced-motion:reduce){.borrador{transition:none}}
 </style>
 </head>
 <body>
@@ -983,6 +988,16 @@ var quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (!('IntersectionObserver' in window)) { document.querySelectorAll('.cadena').forEach(function (c) { c.classList.add('en-vista'); }); return; }
   var o = new IntersectionObserver(function (es) { es.forEach(function (e) { e.target.classList.toggle('en-vista', e.isIntersecting); }); });
   document.querySelectorAll('.cadena').forEach(function (c) { o.observe(c); });
+})();
+
+
+// Franja de revisión: se ve al cargar y al moverse por la página; tras unos segundos quieto, se esconde.
+(function () {
+  var f = document.querySelector('.borrador'); if (!f) return;
+  var t;
+  function ver() { f.classList.remove('oculta'); clearTimeout(t); t = setTimeout(function () { f.classList.add('oculta'); }, 2500); }
+  ver();
+  ['scroll', 'touchstart', 'keydown'].forEach(function (e) { addEventListener(e, ver, { passive: true }); });
 })();
 </script>
 </body>
