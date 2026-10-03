@@ -14,8 +14,6 @@
 <meta name="theme-color" content="#0b1016">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <script>document.documentElement.classList.add('js')</script>
-<!-- 🔴 QUITAR ESTA ETIQUETA ANTES DE PUBLICAR DE VERDAD -->
-<meta name="robots" content="noindex, nofollow">
 <!-- WEB v5 (03/10/2026): fondo A (ondas arriba), aprobada por Alex. Estilos y código dentro de cada página: no usa estilos.css. -->
 <style>
 :root{
@@ -213,13 +211,13 @@ nav .env{display:flex;align-items:center;justify-content:space-between;height:68
 /* ── WhatsApp ─────────────────────────────────────────────── */
 .btn.wa{background:#25d366;color:#05241a!important}
 .btn.wa:hover{box-shadow:0 8px 28px rgba(37,211,102,.3)}
-.wa-flota{position:fixed;right:20px;bottom:54px;z-index:60;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;
+.wa-flota{position:fixed;right:20px;bottom:22px;z-index:60;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;
   background:#25d366;color:#05241a;box-shadow:0 10px 30px rgba(0,0,0,.45);transition:transform .2s,opacity .3s}
 .wa-flota svg{width:28px;height:28px}
 .wa-flota:hover{transform:scale(1.07)}
 .wa-flota:focus-visible{outline:3px solid #e7edf3;outline-offset:3px}
 .wa-flota.oculto{opacity:0;pointer-events:none;transform:scale(.8);visibility:hidden;transition:transform .2s,opacity .3s,visibility 0s .3s}
-@media(max-width:400px){.wa-flota{bottom:70px}body:has(.borrador){padding-bottom:60px}}
+
 
 /* ── ¿Te pasa esto?, plegable ─────────────────────────────── */
 .plegable{position:relative;border:1px solid var(--linea);border-radius:22px;background:var(--capa);transition:border-color .2s}
@@ -311,16 +309,11 @@ footer.pie{padding:36px 0 44px;font-size:.87rem;color:var(--tenue);border-top:1p
 /* ── aparición al bajar ───────────────────────────────────── */
 .js .rev{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1)}
 .js .rev.dentro{opacity:1;transform:none}
-@media print{.js .rev,.js .registro li,.js .ahora{opacity:1!important;transform:none!important}.panel[hidden]{display:grid}.borrador,#lluvia{display:none}}
+@media print{.js .rev,.js .registro li,.js .ahora{opacity:1!important;transform:none!important}.panel[hidden]{display:grid}#lluvia{display:none}}
 .rev.d1{transition-delay:.08s}.rev.d2{transition-delay:.16s}
 
 section[id],.panel{scroll-margin-top:84px}
 @media(max-width:380px){.pestanas button[role="tab"]{font-size:.71rem;padding:10px 2px;letter-spacing:-.01em}}
-
-/* ── 🔴 BORRAR ESTE BLOQUE ANTES DE PUBLICAR ───────────────── */
-.borrador{position:fixed;bottom:0;left:0;right:0;z-index:99;background:#8a531c;color:#fff;
-  text-align:center;font-size:.8rem;padding:7px 12px}
-body:has(.borrador){padding-bottom:34px}
 
 /* ── menú del móvil ───────────────────────────────────────── */
 .abrir-menu{display:none;background:none;border:0;padding:10px;cursor:pointer;width:44px;height:44px;flex-direction:column;justify-content:center;gap:5px}
@@ -506,10 +499,6 @@ nav.miga{position:static;background:none;backdrop-filter:none;-webkit-backdrop-f
 @media(prefers-reduced-motion:reduce){.marca .logo{transition:none}}
 @media(max-width:21em){.marca .logo{display:none}} /* en «em»: con la letra grande en un móvil estrecho, el logo se oculta para que el nombre quepa */
 
-/* ── franja de revisión: se esconde tras unos segundos sin moverse (03/10/2026) ── */
-.borrador{transition:transform .45s ease,opacity .45s ease}
-.borrador.oculta{transform:translateY(100%);opacity:0;pointer-events:none}
-@media(prefers-reduced-motion:reduce){.borrador{transition:none}}
 </style>
 </head>
 <body>
@@ -626,8 +615,8 @@ nav.miga{position:static;background:none;backdrop-filter:none;-webkit-backdrop-f
         <h2>Explícame cómo atiendes hoy a tus clientes</h2>
         <p class="grande">Te digo qué ordenaría primero, cuánto llevaría y qué coste tendría.</p>
         <div class="acciones" style="margin-top:26px">
-          <a class="btn wa" href="https://wa.me/FALTA-NUMERO?text=Hola%2C%20vengo%20de%20tu%20web" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.3 14.8L2.4 21.6l4.7-1.2A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.7-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.1 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 5 5 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.2-.2-.5-.3Z"/></svg>Escríbeme por WhatsApp</a>
-          <a class="btn hueco" href="mailto:alex.automatizacions@gmail.com">Escribir un correo</a>
+          <a class="btn wa" href="https://wa.me/34635910635?text=Hola%2C%20Alejandro.%20Vengo%20de%20tu%20web%2C%20ceroamano.com.%20Te%20cuento%20lo%20que%20necesito%3A%20" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.3 14.8L2.4 21.6l4.7-1.2A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.7-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.1 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 5 5 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.2-.2-.5-.3Z"/></svg>Escríbeme por WhatsApp</a>
+          <a class="btn hueco" href="mailto:alex.automatizacions@gmail.com?subject=Consulta%20desde%20ceroamano.com&amp;body=Hola%2C%20Alejandro%3A%0A%0AVengo%20de%20tu%20web.%20Te%20cuento%3A%0A%0A-%20A%20qu%C3%A9%20se%20dedica%20mi%20negocio%3A%0A-%20Lo%20que%20me%20gustar%C3%ADa%20resolver%3A%0A%0AGracias.">Escribir un correo</a>
         </div>
       </div>
       <div class="relac">
@@ -656,9 +645,7 @@ nav.miga{position:static;background:none;backdrop-filter:none;-webkit-backdrop-f
     <span><strong>Cero a Mano</strong> · Alejandro de la Rosa · Automatización de procesos · España</span>
   </div>
 </footer>
-<!-- 🔴 WHATSAPP SIN NÚMERO (FALTA-NUMERO): poner el de Alex -->
-<a class="wa-flota" href="https://wa.me/FALTA-NUMERO?text=Hola%2C%20vengo%20de%20tu%20web" target="_blank" rel="noopener" aria-label="Escríbeme por WhatsApp (se abre en otra pestaña)"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.3 14.8L2.4 21.6l4.7-1.2A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.7-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.1 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 5 5 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.2-.2-.5-.3Z"/></svg></a>
-<div class="borrador">Versión en revisión · los textos y el diseño pueden cambiar</div>
+<a class="wa-flota" href="https://wa.me/34635910635?text=Hola%2C%20Alejandro.%20Vengo%20de%20tu%20web%2C%20ceroamano.com.%20Te%20cuento%20lo%20que%20necesito%3A%20" target="_blank" rel="noopener" aria-label="Escríbeme por WhatsApp (se abre en otra pestaña)"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2a9.7 9.7 0 0 0-8.3 14.8L2.4 21.6l4.7-1.2A9.7 9.7 0 1 0 12 2.2Zm0 17.7a8 8 0 0 1-4.1-1.1l-.3-.2-2.8.7.8-2.7-.2-.3A8 8 0 1 1 12 19.9Zm4.4-6c-.2-.1-1.4-.7-1.7-.8-.2-.1-.4-.1-.5.1l-.8 1c-.1.2-.3.2-.5.1a6.6 6.6 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.1 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5a.9.9 0 0 0-.7.3 2.8 2.8 0 0 0-.9 2.1 5 5 0 0 0 1 2.6 11.2 11.2 0 0 0 4.3 3.8c1.6.7 2.2.7 3 .6a2.6 2.6 0 0 0 1.7-1.2 2.1 2.1 0 0 0 .2-1.2c-.1-.1-.2-.2-.5-.3Z"/></svg></a>
 <script>
 var quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -775,15 +762,6 @@ var quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   document.querySelectorAll('.cadena').forEach(function (c) { o.observe(c); });
 })();
 
-
-// Franja de revisión: se ve al cargar y al moverse por la página; tras unos segundos quieto, se esconde.
-(function () {
-  var f = document.querySelector('.borrador'); if (!f) return;
-  var t;
-  function ver() { f.classList.remove('oculta'); clearTimeout(t); t = setTimeout(function () { f.classList.add('oculta'); }, 2500); }
-  ver();
-  ['scroll', 'touchstart', 'keydown'].forEach(function (e) { addEventListener(e, ver, { passive: true }); });
-})();
 </script>
 </body>
 </html>
