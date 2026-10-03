@@ -12,6 +12,7 @@
 <meta property="og:url" content="https://ceroamano.com/caso-free-tours-malta.html">
 <meta property="og:locale" content="es_ES">
 <meta name="theme-color" content="#0b1016">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
 <script>document.documentElement.classList.add('js')</script>
 <!-- 🔴 QUITAR ESTA ETIQUETA ANTES DE PUBLICAR DE VERDAD -->
 <meta name="robots" content="noindex, nofollow">
@@ -495,13 +496,22 @@ nav.miga{position:static;background:none;backdrop-filter:none;-webkit-backdrop-f
 .cadena:not(.en-vista) .hilo::after{animation-play-state:paused}
 @media print{.js .rev,.js .registro li,.js .ahora{transition:none!important}.anillo .arco{stroke-dashoffset:0!important}
   .fm-burbuja{opacity:1!important;transform:none!important}.wa-flota,.saltar{display:none!important}}
+
+/* ── logo (03/10/2026): el cero abierto y el punto, sin fondo ── */
+.marca{display:flex;align-items:center;gap:10px}
+.marca .logo{width:31px;height:29px;flex:none;display:block;transition:transform .25s cubic-bezier(.2,.7,.3,1)}
+.marca:hover .logo{transform:rotate(-8deg)}
+.marca .texto{display:block;color:var(--texto)}
+.marca .texto span{color:var(--verde)}
+@media(prefers-reduced-motion:reduce){.marca .logo{transition:none}}
+@media(max-width:21em){.marca .logo{display:none}} /* en «em»: con la letra grande en un móvil estrecho, el logo se oculta para que el nombre quepa */
 </style>
 </head>
 <body>
 <a class="saltar" href="#contenido">Saltar al contenido</a>
 <nav aria-label="Principal">
   <div class="env">
-    <a class="marca" href="index.html">Cero a Mano<span>.</span> <em>Alejandro de la Rosa</em></a>
+    <a class="marca" href="index.html"><svg class="logo" viewBox="8 8 26 24" aria-hidden="true" focusable="false"><path d="M26.72 13.28 A 9.5 9.5 0 1 0 26.72 26.72" fill="none" stroke="#35c3a1" stroke-width="3.4" stroke-linecap="round"/><circle cx="29.6" cy="20" r="2.9" fill="#e3a664"/></svg><span class="texto">Cero a Mano<span>.</span> <em>Alejandro de la Rosa</em></span></a>
     <button class="abrir-menu" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
       <span></span><span></span><span></span>
     </button>
